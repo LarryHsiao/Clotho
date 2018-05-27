@@ -2,4 +2,4 @@ coverage:
 	notify:
 		slack:
 			clotho_build:
-				url: "https://hooks.slack.com/services/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"
+				url: "https://hooks.slack.com/services/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"
