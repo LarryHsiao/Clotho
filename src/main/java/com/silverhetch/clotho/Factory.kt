@@ -3,10 +3,10 @@ package com.silverhetch.elizabeth.arch
 /**
  * Factory interface for General factory classes.
  */
-interface Factory<out target> {
+interface Factory<out T> {
 
     /**
      * Instance of the target
      */
-    fun instance(): target
+    fun instance(): T
 }
