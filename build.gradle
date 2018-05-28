@@ -51,6 +51,7 @@ bintray {
     key = System.getenv('BINTRAY_KEY')
     publications = ['release']
     publish = true
+    override = true
     pkg {
         repo = 'Elizabeth'
         name = 'Clotho'
