@@ -1,4 +1,4 @@
-package com.silverhetch.elizabeth.arch
+package com.silverhetch.elizabeth
 
 /**
  * Data source with Type <T>.

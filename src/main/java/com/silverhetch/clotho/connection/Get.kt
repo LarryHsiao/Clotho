@@ -1,4 +1,4 @@
-package com.silverhetch.elizabeth.arch.connection
+package com.silverhetch.elizabeth.connection
 
 import com.silverhetch.clotho.connection.Target
 import com.silverhetch.clotho.connection.WebApi

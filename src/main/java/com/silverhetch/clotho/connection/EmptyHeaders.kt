@@ -1,4 +1,4 @@
-package com.silverhetch.elizabeth.arch.connection
+package com.silverhetch.elizabeth.connection
 
 /**
  * Empty header implementation.

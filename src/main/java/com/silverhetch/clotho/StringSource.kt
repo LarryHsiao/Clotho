@@ -1,4 +1,4 @@
-package com.silverhetch.elizabeth.arch
+package com.silverhetch.elizabeth
 
 /**
  * String source just represent content of String.

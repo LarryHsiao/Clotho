@@ -1,4 +1,4 @@
-package com.silverhetch.elizabeth.arch.utility
+package com.silverhetch.elizabeth.utility
 
 interface Platform {
     fun name():String

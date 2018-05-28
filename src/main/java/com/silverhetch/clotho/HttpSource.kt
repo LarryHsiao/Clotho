@@ -1,4 +1,4 @@
-package com.silverhetch.elizabeth.arch
+package com.silverhetch.elizabeth
 
 import com.silverhetch.clotho.connection.WebRequest
 

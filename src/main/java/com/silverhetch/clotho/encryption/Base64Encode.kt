@@ -1,6 +1,6 @@
-package com.silverhetch.elizabeth.arch.encryption
+package com.silverhetch.elizabeth.encryption
 
-import com.silverhetch.elizabeth.arch.Pipeline
+import com.silverhetch.elizabeth.Pipeline
 import java.util.*
 
 /**

@@ -1,4 +1,4 @@
-package com.silverhetch.elizabeth.arch.log
+package com.silverhetch.elizabeth.log
 
 import com.silverhetch.clotho.log.Log
 import org.junit.Assert.*
