@@ -10,7 +10,6 @@ buildscript {
     }
 }
 
-apply from: 'utility.gradle'
 apply plugin: 'java-library'
 apply plugin: 'kotlin'
 
@@ -26,8 +25,7 @@ compileTestKotlin {
 }
 
 sourceCompatibility = 1.8
-
-def clothoVersion = '1.0.0-' + "${getGitHash()}"
+def clothoVersion = '1.0.0-' + "${(int)(new Date().getTime()/300000)}"
 repositories {
     mavenCentral()
 }

@@ -1,5 +1,7 @@
 package com.silverhetch.clotho
 
+import java.util.*
+
 /**
  * String source just represent content of String.
  */
