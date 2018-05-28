@@ -1,37 +1,18 @@
-group 'com.silverhetch'
-version '1.0.5'
-
-apply plugin: 'java'
-apply plugin: 'kotlin'
-
-sourceCompatibility = 1.8
-
-repositories {
-    mavenCentral()
-}
-
-dependencies {
-    testCompile group: 'junit', name: 'junit', version: '4.12'
-    compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
-}
-
-apply plugin: 'jacoco'
-
-jacocoTestReport{
-    reports{
-        xml.enabled = true
-    }
-}
-
 buildscript {
     ext.kotlin_version = '1.2.41'
     repositories {
         mavenCentral()
+        jcenter()
     }
     dependencies {
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7.3'
     }
 }
+
+apply from: 'utility.gradle'
+apply plugin: 'java-library'
+apply plugin: 'kotlin'
 
 compileKotlin {
     kotlinOptions {
@@ -41,5 +22,54 @@ compileKotlin {
 compileTestKotlin {
     kotlinOptions {
         jvmTarget = "1.8"
+    }
+}
+
+sourceCompatibility = 1.8
+
+def clothoVersion = '1.0.0-' + "${getGitHash()}"
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+}
+
+
+apply plugin: 'jacoco'
+jacocoTestReport {
+    reports {
+        xml.enabled = true
+    }
+}
+
+apply plugin: 'com.jfrog.bintray'
+bintray {
+    user = 'larryhsiao'
+    key = System.getenv('BINTRAY_KEY')
+    publications = ['release']
+    pkg {
+        repo = 'Elizabeth'
+        name = 'Clotho'
+        userOrg = 'larryhsiao'
+        licenses = ['MIT']
+        vcsUrl = 'https://github.com/LarryHsiao/Clotho.git'
+        version {
+            name = clothoVersion
+        }
+    }
+}
+
+apply plugin: 'maven-publish'
+publishing {
+    publications {
+        release(MavenPublication) {
+            from components.java
+            groupId 'com.silverhetch'
+            artifactId 'clotho'
+            version clothoVersion
+        }
     }
 }
