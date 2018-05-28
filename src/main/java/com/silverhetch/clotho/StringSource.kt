@@ -1,4 +1,4 @@
-package com.silverhetch.elizabeth
+package com.silverhetch.clotho
 
 /**
  * String source just represent content of String.

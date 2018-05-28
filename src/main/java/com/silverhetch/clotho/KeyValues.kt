@@ -1,4 +1,4 @@
-package com.silverhetch.elizabeth
+package com.silverhetch.clotho
 
 interface KeyValues {
     fun save(key: String, value: String)

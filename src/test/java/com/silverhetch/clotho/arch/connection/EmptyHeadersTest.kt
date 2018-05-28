@@ -1,4 +1,4 @@
-package com.silverhetch.elizabeth.connection
+package com.silverhetch.clotho.connection
 
 import org.junit.Assert.*
 import org.junit.Test

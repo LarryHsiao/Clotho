@@ -1,7 +1,7 @@
 package com.silverhetch.clotho
 
 import com.silverhetch.clotho.connection.*
-import com.silverhetch.elizabeth.connection.Get
+import com.silverhetch.clotho.connection.Get
 import org.junit.Ignore
 import org.junit.Test
 

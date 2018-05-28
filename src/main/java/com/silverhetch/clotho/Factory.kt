@@ -1,4 +1,4 @@
-package com.silverhetch.elizabeth
+package com.silverhetch.clotho
 
 /**
  * Factory interface for General factory classes.

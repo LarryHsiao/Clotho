@@ -1,6 +1,6 @@
-package com.silverhetch.elizabeth.encryption
+package com.silverhetch.clotho.encryption
 
-import com.silverhetch.elizabeth.Pipeline
+import com.silverhetch.clotho.Pipeline
 import javax.crypto.Mac
 import javax.crypto.spec.SecretKeySpec
 

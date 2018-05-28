@@ -1,4 +1,4 @@
-package com.silverhetch.elizabeth.log
+package com.silverhetch.clotho.log
 
 import com.silverhetch.clotho.log.Log
 
