@@ -1,7 +1,5 @@
 package com.silverhetch.clotho.connection
 
-import com.silverhetch.clotho.connection.Target
-import com.silverhetch.clotho.connection.WebApi
 import java.net.HttpURLConnection
 
 /**

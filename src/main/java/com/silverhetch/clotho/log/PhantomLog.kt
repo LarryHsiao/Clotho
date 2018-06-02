@@ -1,7 +1,5 @@
 package com.silverhetch.clotho.log
 
-import com.silverhetch.clotho.log.Log
-
 /**
  * Just leave it empty.
  */

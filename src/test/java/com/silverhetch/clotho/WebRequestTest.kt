@@ -1,16 +1,12 @@
 package com.silverhetch.clotho
 
-import com.silverhetch.clotho.connection.*
 import com.silverhetch.clotho.connection.Get
+import com.silverhetch.clotho.connection.TargetImpl
+import com.silverhetch.clotho.connection.WebRequest
+import org.junit.Assert.*
 import org.junit.Ignore
 import org.junit.Test
-
-import java.lang.reflect.Method
-
 import java.net.HttpURLConnection.HTTP_OK
-import org.junit.Assert.assertEquals
-import org.junit.Assert.assertTrue
-import org.junit.Assert.fail
 
 /**
  * Created by Larry Hsiao on 2016/11/20.

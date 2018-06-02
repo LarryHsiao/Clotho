@@ -11,7 +11,7 @@ public class TargetImpl implements Target {
         this.sslSocketFactory = sslSocketFactory;
     }
 
-    public TargetImpl(String url){
+    public TargetImpl(String url) {
         this(url, null);
     }
 

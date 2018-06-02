@@ -1,11 +1,10 @@
 package com.silverhetch.clotho.log
 
-import com.silverhetch.clotho.log.Log
-import org.junit.Assert.*
+import org.junit.Assert.assertEquals
+import org.junit.Assert.fail
 import org.junit.Test
-import javax.security.auth.login.FailedLoginException
 
-class ANSIColorLogTest{
+class ANSIColorLogTest {
     @Test
     fun info() {
         ANSIColorLog(object : Log {
@@ -14,7 +13,7 @@ class ANSIColorLogTest{
             }
 
             override fun info(p0: String?) {
-                assertEquals(ANSIColorLog.ANSI_CYAN+ANSIColorLog.ANSI_RESET, p0)
+                assertEquals(ANSIColorLog.ANSI_CYAN + ANSIColorLog.ANSI_RESET, p0)
             }
 
             override fun error(p0: String?) {
@@ -31,7 +30,7 @@ class ANSIColorLogTest{
     fun warning() {
         ANSIColorLog(object : Log {
             override fun warning(p0: String?) {
-                assertEquals(ANSIColorLog.ANSI_YELLOW+ANSIColorLog.ANSI_RESET, p0)
+                assertEquals(ANSIColorLog.ANSI_YELLOW + ANSIColorLog.ANSI_RESET, p0)
             }
 
             override fun info(p0: String?) {
@@ -60,7 +59,7 @@ class ANSIColorLogTest{
             }
 
             override fun error(p0: String?) {
-                assertEquals(ANSIColorLog.ANSI_RED+ANSIColorLog.ANSI_RESET, p0)
+                assertEquals(ANSIColorLog.ANSI_RED + ANSIColorLog.ANSI_RESET, p0)
             }
 
             override fun debug(p0: String?) {
@@ -85,7 +84,7 @@ class ANSIColorLogTest{
             }
 
             override fun debug(p0: String?) {
-                assertEquals(ANSIColorLog.ANSI_BLUE+ANSIColorLog.ANSI_RESET, p0)
+                assertEquals(ANSIColorLog.ANSI_BLUE + ANSIColorLog.ANSI_RESET, p0)
             }
         }).debug("")
     }

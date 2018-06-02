@@ -1,6 +1,5 @@
 package com.silverhetch.clotho.connection;
 
-
 import com.silverhetch.clotho.connection.exception.HttpException;
 
 import javax.net.ssl.HttpsURLConnection;

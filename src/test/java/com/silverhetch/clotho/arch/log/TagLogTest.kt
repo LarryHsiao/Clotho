@@ -1,7 +1,7 @@
 package com.silverhetch.clotho.log
 
-import com.silverhetch.clotho.log.Log
-import org.junit.Assert.*
+import org.junit.Assert.assertEquals
+import org.junit.Assert.fail
 import org.junit.Test
 
 class TagLogTest {
@@ -30,7 +30,7 @@ class TagLogTest {
     fun info() {
         TagLog(object : Log {
             override fun warning(p0: String?) {
-               fail()
+                fail()
             }
 
             override fun info(p0: String?) {

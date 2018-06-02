@@ -1,9 +1,9 @@
 package com.silverhetch.clotho.connection
 
-import org.junit.Assert.*
+import org.junit.Assert.assertTrue
 import org.junit.Test
 
-class EmptyHeadersTest{
+class EmptyHeadersTest {
     @Test
     fun simple() {
         assertTrue(EmptyHeaders().values().isEmpty())

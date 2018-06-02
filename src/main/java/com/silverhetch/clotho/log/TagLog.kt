@@ -1,8 +1,6 @@
 package com.silverhetch.clotho.log
 
-import com.silverhetch.clotho.log.Log
-
-class TagLog(private val log:Log) : Log {
+class TagLog(private val log: Log) : Log {
     override fun warning(p0: String?) {
         log.warning("[WARN]: $p0")
     }

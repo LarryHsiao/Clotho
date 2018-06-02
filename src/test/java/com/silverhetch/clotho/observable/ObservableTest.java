@@ -4,7 +4,6 @@ import org.junit.Test;
 
 import java.util.concurrent.atomic.AtomicBoolean;
 
-import static java.lang.Boolean.FALSE;
 import static org.junit.Assert.*;
 
 public class ObservableTest {

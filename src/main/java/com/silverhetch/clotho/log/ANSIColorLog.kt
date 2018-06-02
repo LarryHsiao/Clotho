@@ -1,7 +1,5 @@
 package com.silverhetch.clotho.log
 
-import com.silverhetch.clotho.log.Log
-
 /**
  * Using ANSI escape codes to color the logs. Note that not every terminal support ANSI codes.
  *

@@ -1,6 +1,5 @@
 package com.silverhetch.clotho;
 
-
 import com.silverhetch.clotho.connection.Response;
 import org.junit.Test;
 
