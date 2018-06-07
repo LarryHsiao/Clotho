@@ -60,6 +60,7 @@ bintray {
             name = clothoVersion
             gpg {
                 sign = true
+                passphrase = System.getenv('BINTRAY_PASSPHRASE')
             }
         }
     }
