@@ -58,6 +58,9 @@ bintray {
         vcsUrl = 'https://github.com/LarryHsiao/Clotho.git'
         version {
             name = clothoVersion
+            gpg {
+                sign = true
+            }
         }
     }
 }
