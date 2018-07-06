@@ -1,5 +1,5 @@
 package com.silverhetch.clotho.observable;
 
 public interface Observer<T> {
-    void onUpdate(ObservableImpl<T> observableImpl, T data);
+    void onUpdate(Observable<T> observable, T data);
 }
