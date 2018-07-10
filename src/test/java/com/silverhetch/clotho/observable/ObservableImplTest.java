@@ -11,9 +11,12 @@ public class ObservableImplTest {
     public void notifyObservers() throws Exception {
         final AtomicBoolean hasUpdate = new AtomicBoolean(false);
         ObservableImpl<String> observableImpl = new ObservableImpl<>("");
-        observableImpl.addObserver((observableImpl1, data) -> {
-            hasUpdate.set(true);
-            assertEquals("Update", data);
+        observableImpl.addObserver(new Observer<String>() {
+            @Override
+            public void onUpdate(Observable<String> observableImpl1, String data) {
+                hasUpdate.set(true);
+                assertEquals("Update", data);
+            }
         });
         observableImpl.notifyObservers("Update");
         assertTrue(hasUpdate.get());
@@ -23,7 +26,12 @@ public class ObservableImplTest {
     public void removeObserver() throws Exception {
         final AtomicBoolean hasUpdate = new AtomicBoolean(false);
         ObservableImpl<String> observableImpl = new ObservableImpl<>("");
-        Observer<String> observer = (observableImpl1, data) -> hasUpdate.set(true);
+        Observer<String> observer = new Observer<String>() {
+            @Override
+            public void onUpdate(Observable<String> observableImpl1, String data) {
+                hasUpdate.set(true);
+            }
+        };
         observableImpl.addObserver(observer);
         observableImpl.removeObserver(observer);
         observableImpl.notifyObservers("Update");
