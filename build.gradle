@@ -24,6 +24,9 @@ dependencies {
     compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
 }
 
+jar {
+    from sourceSets.main.allSource
+}
 
 apply plugin: 'jacoco'
 jacocoTestReport {

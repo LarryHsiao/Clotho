@@ -5,7 +5,7 @@ import java.util.List;
 
 public class ObservableImpl<T> implements Observable<T> {
     private final List<Observer<T>> observers = new LinkedList<>();
-    private T value;
+    protected T value;
 
     public ObservableImpl(T initial) {
         this.value = initial;
