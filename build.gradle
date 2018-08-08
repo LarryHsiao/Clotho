@@ -14,7 +14,7 @@ apply plugin: 'java-library'
 apply plugin: 'kotlin'
 
 sourceCompatibility = 1.7
-def clothoVersion = '1.0.0-' + "${(int)(new Date().getTime()/300000)}"
+def clothoVersion = '1.0.' + "${(int)(new Date().getTime()/300000)}"
 repositories {
     mavenCentral()
 }
