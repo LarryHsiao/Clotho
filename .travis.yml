@@ -8,3 +8,4 @@ notifications:
 after_success:
 - bash <(curl -s https://codecov.io/bash)
 - "./gradlew bintrayUpload"
+- "./gradlew sonarqube -Dsonar.organization=larryhsiao-github -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=${SONAR_KEY}"
