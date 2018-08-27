@@ -13,7 +13,6 @@ buildscript {
 
 apply plugin: 'java-library'
 apply plugin: 'kotlin'
-apply plugin: 'org.sonarqube'
 
 sourceCompatibility = 1.7
 def clothoVersion = '1.0.' + "${(int)(new Date().getTime()/300000)}"
@@ -81,5 +80,23 @@ publishing {
             artifactId 'clotho'
             version clothoVersion
         }
+    }
+}
+
+apply plugin: 'org.sonarqube'
+sonarqube {
+    properties {
+        property "sonar.host.url", "https://sonarcloud.io"
+        property "sonar.organization", "larryhsiao-github"
+        property "sonar.projectName", "Clotho"
+        property "sonar.projectVersion", "${clothoVersion}"
+
+        property 'sonar.sources', 'src/main/java'
+        property "sonar.tests", "src/test/java"
+
+//        property "sonar.java.binaries", "build/tmp/kotlin-classes/debug"
+
+        property "sonar.jacoco.reportPaths","build/jacoco/test.exec"
+        property "sonar.junit.reportPahts","build/test-results/test"
     }
 }
