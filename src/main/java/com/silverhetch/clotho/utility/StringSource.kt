@@ -1,4 +1,6 @@
-package com.silverhetch.clotho
+package com.silverhetch.clotho.utility
+
+import com.silverhetch.clotho.Source
 
 /**
  * String source just represent content of String.

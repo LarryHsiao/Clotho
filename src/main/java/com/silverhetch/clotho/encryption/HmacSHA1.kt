@@ -5,6 +5,9 @@ import java.util.*
 import javax.crypto.Mac
 import javax.crypto.spec.SecretKeySpec
 
+/**
+ * HmacSHA1 Encode with given data and secret.
+ */
 class HmacSHA1(private val data: Source<ByteArray>, private val secret: String) : Source<ByteArray> {
     override fun fetch(): ByteArray {
         val signingKey = SecretKeySpec(secret.toByteArray(Charsets.UTF_8), "HmacSHA1")
