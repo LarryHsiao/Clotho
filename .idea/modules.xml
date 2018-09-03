@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/clotho.iml" filepath="$PROJECT_DIR$/clotho.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/clotho.iml" filepath="$PROJECT_DIR$/.idea/modules/clotho.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/clotho_main.iml" filepath="$PROJECT_DIR$/.idea/modules/clotho_main.iml" group="clotho" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/clotho_test.iml" filepath="$PROJECT_DIR$/.idea/modules/clotho_test.iml" group="clotho" />
     </modules>
