@@ -9,7 +9,7 @@ class PhantomRequestTest {
     fun simple() {
         assertEquals(
             200,
-            PhantomRequest().request()
+            PhantomRequest().request().code
         )
     }
 }
