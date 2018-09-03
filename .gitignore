@@ -1,4 +1,10 @@
 .gradle
 out
 .idea/workspace.xml
+.idea/libraries
+.idea/modules.xml
+.idea/usage.statistics.xml
+.idea/tasks.xml
+**gradle.xml
+**.iml
 build
