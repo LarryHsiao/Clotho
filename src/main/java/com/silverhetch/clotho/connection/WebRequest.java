@@ -1,11 +1,18 @@
 package com.silverhetch.clotho.connection;
 
 /**
- * Created by Larry Hsiao on 2016/11/2.
+ * Represent a web request.
  */
 
 public interface WebRequest {
+    /**
+     * Url of the target
+     */
     String url();
 
+    /**
+     * Request to WebAPI.
+     * @return API response
+     */
     Response request();
 }

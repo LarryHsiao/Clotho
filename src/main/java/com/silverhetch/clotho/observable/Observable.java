@@ -1,5 +1,9 @@
 package com.silverhetch.clotho.observable;
 
+/**
+ * Represent observable object.
+ * @param <T> Type of observable observes.
+ */
 public interface Observable <T>{
     /**
      * @return value this object keeps

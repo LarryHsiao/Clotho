@@ -1,9 +1,8 @@
 package com.silverhetch.clotho.connection.exception;
 
 /**
- * Created by larryhsiao on 2017/6/6.
+ * Exception for web apis.
  */
-
 public class HttpException extends RuntimeException {
     public HttpException() {
     }

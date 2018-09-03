@@ -12,7 +12,6 @@ import java.net.HttpURLConnection.HTTP_OK
  * Created by Larry Hsiao on 2016/11/20.
  */
 class WebRequestTest {
-
     @Ignore("Actual request")
     @Test
     fun getUrl() {
