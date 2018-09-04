@@ -15,13 +15,13 @@ import java.net.URL;
  * Created by Larry Hsiao on 2016/11/16.
  */
 public abstract class WebApi implements WebRequest {
-    protected abstract void setupConnection(HttpURLConnection connection) throws Exception;
-
     private final Target target;
 
     public WebApi(Target target) {
         this.target = target;
     }
+
+    protected abstract void setupConnection(HttpURLConnection connection) throws Exception;
 
     @Override
     public String url() {
