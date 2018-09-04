@@ -25,6 +25,9 @@ class HtmlColoredLogTest {
             }
         })) {
             info("ABC")
+            error("ABC")
+            warning("ABC")
+            debug("ABC")
             assertTrue(true)
         }
     }
