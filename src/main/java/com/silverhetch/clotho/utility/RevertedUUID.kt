@@ -8,7 +8,7 @@ import java.util.*
 /**
  * Order uuid bytes with little endianess
  */
-class RevertBytesUUID(private val input: UUID) : Source<UUID> {
+class RevertedUUID(private val input: UUID) : Source<UUID> {
     override fun fetch(): UUID {
         val buffer =  ByteBuffer.allocate(16)
         buffer.putLong(input.leastSignificantBits)
