@@ -14,10 +14,10 @@ class TextBaseConnImplTest {
      */
     @Test
     fun content() {
-        val inputString = "This is input"
+        val inputString = "This is input" + System.lineSeparator()
         val outputStream = ByteOutputStream(inputString.toByteArray().size)
         TextBaseConnImpl(
-            "This is input".byteInputStream().bufferedReader(),
+            inputString.byteInputStream().bufferedReader(),
             outputStream.bufferedWriter()) { conn, input ->
             conn.send(input)
         }.apply {

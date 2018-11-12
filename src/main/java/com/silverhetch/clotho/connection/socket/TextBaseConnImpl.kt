@@ -38,7 +38,11 @@ class TextBaseConnImpl(private val input: BufferedReader,
     override fun send(msg: String) {
         sendThread.submit {
             output.write(
-                msg
+                if (msg.endsWith(System.lineSeparator())){
+                    msg
+                }else{
+                    "$msg${System.lineSeparator()}"
+                }
             )
             output.flush()
         }
