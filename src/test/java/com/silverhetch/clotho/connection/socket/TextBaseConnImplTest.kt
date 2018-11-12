@@ -18,8 +18,8 @@ class TextBaseConnImplTest {
         val outputStream = ByteOutputStream(inputString.toByteArray().size)
         TextBaseConnImpl(
             "This is input".byteInputStream().bufferedReader(),
-            outputStream.bufferedWriter()) { input ->
-            input
+            outputStream.bufferedWriter()) { conn, input ->
+            conn.send(input)
         }.apply {
             launch()
             Thread.sleep(3000)

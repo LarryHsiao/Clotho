@@ -12,7 +12,7 @@ import java.util.concurrent.Executors
  */
 class TextBaseConnImpl(private val input: BufferedReader,
                        private val output: BufferedWriter,
-                       private val proceedMessage: (msg: String) -> String) : TextBaseConn {
+                       private val proceedMessage: (conn: TextBaseConn, msg: String) -> Unit) : TextBaseConn {
     private val sendThread: ExecutorService = Executors.newSingleThreadScheduledExecutor()
     private var running = false
 
@@ -28,10 +28,8 @@ class TextBaseConnImpl(private val input: BufferedReader,
                     sendThread.submit { close() }
                     return@Thread
                 }
-                send(
-                    proceedMessage(
-                        readResult
-                    )
+                proceedMessage(
+                    this, readResult
                 )
             }
         }.start()
