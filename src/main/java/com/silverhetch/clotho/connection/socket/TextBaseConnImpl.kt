@@ -7,6 +7,9 @@ import java.util.concurrent.Executors
 
 /**
  * Implementation of [TextBaseConn] with two single thread for sending/receiving text messages.
+ *
+ * Message receiving/sending triggers by line separator.
+ *
  * This class only handles stream reading and writing.
  * The connection should be established before initialize this class.
  */
@@ -38,9 +41,9 @@ class TextBaseConnImpl(private val input: BufferedReader,
     override fun send(msg: String) {
         sendThread.submit {
             output.write(
-                if (msg.endsWith(System.lineSeparator())){
+                if (msg.endsWith(System.lineSeparator())) {
                     msg
-                }else{
+                } else {
                     "$msg${System.lineSeparator()}"
                 }
             )
