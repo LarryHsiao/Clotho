@@ -28,7 +28,7 @@ class SocketConnTest {
             socket.close()
         }.start()
 
-        Thread.sleep(50)
+        Thread.sleep(150)
 
         val socket = Socket()
         socket.connect(InetSocketAddress("localhost", 12305))
@@ -36,9 +36,9 @@ class SocketConnTest {
             outputString = msg
         }.apply {
             launch()
-            Thread.sleep(50)
+            Thread.sleep(150)
             send(inputString)
-            Thread.sleep(50)
+            Thread.sleep(150)
             Assert.assertEquals(
                 inputString,
                 outputString
