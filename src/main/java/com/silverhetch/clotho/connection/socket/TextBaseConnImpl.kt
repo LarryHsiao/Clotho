@@ -2,6 +2,7 @@ package com.silverhetch.clotho.connection.socket
 
 import java.io.BufferedReader
 import java.io.BufferedWriter
+import java.io.IOException
 import java.util.concurrent.ExecutorService
 import java.util.concurrent.Executors
 
@@ -25,29 +26,37 @@ class TextBaseConnImpl(private val input: BufferedReader,
         }
         running = true
         Thread {
-            while (running) {
-                val readResult: String? = input.readLine()
-                if (readResult == null) { // End of stream
-                    sendThread.submit { close() }
-                    return@Thread
+            try {
+                while (running) {
+                    val readResult: String? = input.readLine()
+                    if (readResult == null) { // End of stream
+                        sendThread.submit { close() }
+                        return@Thread
+                    }
+                    proceedMessage(
+                        this, readResult
+                    )
                 }
-                proceedMessage(
-                    this, readResult
-                )
+            }catch (e : IOException){
+                close()
             }
         }.start()
     }
 
     override fun send(msg: String) {
         sendThread.submit {
-            output.write(
-                if (msg.endsWith(System.lineSeparator())) {
-                    msg
-                } else {
-                    "$msg${System.lineSeparator()}"
-                }
-            )
-            output.flush()
+            try {
+                output.write(
+                    if (msg.endsWith(System.lineSeparator())) {
+                        msg
+                    } else {
+                        "$msg${System.lineSeparator()}"
+                    }
+                )
+                output.flush()
+            }catch (e: IOException){
+                close()
+            }
         }
     }
 
