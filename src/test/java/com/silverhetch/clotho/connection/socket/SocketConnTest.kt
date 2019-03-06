@@ -1,0 +1,48 @@
+package com.silverhetch.clotho.connection.socket
+
+import org.junit.Assert
+import org.junit.Test
+import java.net.InetAddress
+import java.net.InetSocketAddress
+import java.net.ServerSocket
+import java.net.Socket
+
+/**
+ * Unit test.
+ */
+class SocketConnTest {
+    @Test
+    fun checkInputOutput() {
+        val inputString = "This is input."
+        var outputString = ""
+
+        Thread {
+            val echoServer = ServerSocket(12305, 0, InetAddress.getByName("localhost"))
+            val socket = echoServer.accept()
+            val received = socket.getInputStream().bufferedReader().readLine()
+
+            socket.getOutputStream().bufferedWriter().apply {
+                write(received)
+                flush()
+            }
+            socket.close()
+        }.start()
+
+        Thread.sleep(150)
+
+        val socket = Socket()
+        socket.connect(InetSocketAddress("localhost", 12305))
+        SocketConn(socket) { conn, msg ->
+            outputString = msg
+        }.apply {
+            launch()
+            Thread.sleep(150)
+            send(inputString)
+            Thread.sleep(150)
+            Assert.assertEquals(
+                inputString,
+                outputString
+            )
+        }
+    }
+}
