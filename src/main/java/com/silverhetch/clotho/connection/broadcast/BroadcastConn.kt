@@ -47,7 +47,7 @@ class BroadcastConn(private val socket: DatagramSocket,
                     DatagramPacket(
                         msg.toByteArray(),
                         msg.toByteArray().size,
-                        broadcastDest.fetch(),
+                        broadcastDest.value(),
                         port
                     )
                 )

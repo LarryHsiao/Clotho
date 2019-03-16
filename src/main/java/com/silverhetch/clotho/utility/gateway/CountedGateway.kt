@@ -9,8 +9,8 @@ import com.silverhetch.clotho.storage.Ceres
 class CountedGateway(private val preferenceSource: Source<Ceres>,
                      private val maxCount: Int,
                      private val delegate: () -> Unit) : Source<Unit> {
-    override fun fetch() {
-        val preference = preferenceSource.fetch()
+    override fun value() {
+        val preference = preferenceSource.value()
         val curr = preference.get("count").let {
             if (it.isEmpty()) {
                 0

@@ -19,7 +19,7 @@ class SQLiteConnTest {
 
     @Test
     fun connCheck() {
-        SQLiteConn("name").fetch().close()
+        SQLiteConn("name").value().close()
         assertTrue(File("name").exists())
     }
 }

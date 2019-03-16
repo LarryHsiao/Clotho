@@ -8,7 +8,7 @@ class ConstSourceTest {
     fun simple() {
         assertEquals(
             "TestString",
-            ConstSource("TestString").fetch()
+            ConstSource("TestString").value()
         )
     }
 }

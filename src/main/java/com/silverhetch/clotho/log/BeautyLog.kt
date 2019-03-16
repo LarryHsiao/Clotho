@@ -7,7 +7,7 @@ import com.silverhetch.clotho.Source
  * @todo #refactor-1 replaced with class impalement [Log]
  */
 class BeautyLog : Source<Log> {
-    override fun fetch(): Log {
+    override fun value(): Log {
         return TagLog(
             ANSIColorLog(
                 SystemPrintLog()

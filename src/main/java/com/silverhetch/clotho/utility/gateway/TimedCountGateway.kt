@@ -5,7 +5,7 @@ import com.silverhetch.clotho.storage.Ceres
 
 /**
  * Gateway that given method will only triggered
- * if fetch() had triggered specific times in specific duration
+ * if value() had triggered specific times in specific duration
  * or it had been triggered before.
  *
  * Implement one if other parameters required.
@@ -21,8 +21,8 @@ class TimedCountGateway(
     private var lastTimestamp: Long = 0
     private var count: Int = 0
 
-    override fun fetch() {
-        val preference = preferenceSource.fetch()
+    override fun value() {
+        val preference = preferenceSource.value()
         if (preference.get("triggered").toBoolean()) {
             method()
         } else {

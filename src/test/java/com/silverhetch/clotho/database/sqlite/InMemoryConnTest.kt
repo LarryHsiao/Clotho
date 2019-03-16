@@ -6,7 +6,7 @@ import org.junit.Test
 class InMemoryConnTest {
     @Test
     fun noFileExist() {
-        InMemoryConn().fetch().use {
+        InMemoryConn().value().use {
             Assert.assertTrue(it.isValid(0))
         }
     }

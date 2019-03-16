@@ -8,7 +8,7 @@ class DbCeres(dbConn: Source<Connection>) : Ceres {
     private val dbConn = CeresDbConn(dbConn)
 
     override fun store(key: String, value: String) {
-        dbConn.fetch().prepareStatement("""
+        dbConn.value().prepareStatement("""
             insert or replace into ceres (key, value)
             values (?, ?);
         """).use { statement ->
@@ -24,7 +24,7 @@ class DbCeres(dbConn: Source<Connection>) : Ceres {
     }
 
     override fun get(key: String): String {
-        dbConn.fetch().prepareStatement("""
+        dbConn.value().prepareStatement("""
                 select *
                 from ceres
                 where key=?;""").use {
@@ -40,7 +40,7 @@ class DbCeres(dbConn: Source<Connection>) : Ceres {
     }
 
     override fun all(): Map<String, String> {
-        dbConn.fetch().createStatement().use {
+        dbConn.value().createStatement().use {
             it.executeQuery("""
               select *
               from ceres;

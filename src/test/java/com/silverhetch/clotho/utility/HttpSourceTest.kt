@@ -8,6 +8,6 @@ class HttpSourceTest {
     fun simple() {
         HttpSource(
             PhantomRequest()
-        ).fetch()
+        ).value()
     }
 }

@@ -13,12 +13,12 @@ class HmacSHA1Test {
             HexString(
                 HmacSHA1(
                     object : Source<ByteArray> {
-                        override fun fetch(): ByteArray {
+                        override fun value(): ByteArray {
                             return "ABC".toByteArray()
                         }
                     }, "ThisIsSecretKey"
                 )
-            ).fetch()
+            ).value()
         )
     }
 }

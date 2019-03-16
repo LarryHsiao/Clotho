@@ -4,8 +4,8 @@ import com.silverhetch.clotho.Source
 import java.sql.Connection
 
 class CeresDbConn(private val connection: Source<Connection>) : Source<Connection> {
-    override fun fetch(): Connection {
-        return connection.fetch().apply {
+    override fun value(): Connection {
+        return connection.value().apply {
             this.createStatement().use {
                 it.execute("""
                     create table if not exists ceres (
