@@ -27,6 +27,6 @@ class MetaRecurring(private val meta: Meta) : Recurring {
             && (pointer.get(Calendar.YEAR) == meta.year() || meta.year() == 0)
             && (pointer.get(Calendar.DAY_OF_WEEK) == meta.weekday() || meta.weekday() == 0)
             && (pointer.get(Calendar.WEEK_OF_MONTH) == meta.week() || meta.weekday() == 0)
-            && ((pointer.timeInMillis - started.timeInMillis) % meta.interval() == 0L || meta.interval() == 0L)
+            && (meta.interval() == 0L || (pointer.timeInMillis - started.timeInMillis) % meta.interval() == 0L )
     }
 }
