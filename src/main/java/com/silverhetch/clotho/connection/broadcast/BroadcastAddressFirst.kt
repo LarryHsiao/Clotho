@@ -8,8 +8,11 @@ import java.net.InetAddress
  *
  * Note: This method may returns null which we can not avoid for now
  */
-class BroadcastAddressFirst : Source<InetAddress?> {
-    override fun value(): InetAddress? {
-        return BroadcastAddressCp().value()[0]
+class BroadcastAddressFirst : Source<Target?> {
+    override fun value(): Target? {
+        BroadcastAddressCp().value().forEach {
+            return it
+        }
+        return null
     }
 }

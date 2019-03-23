@@ -1,19 +1,24 @@
 package com.silverhetch.clotho.connection.broadcast
 
 import com.silverhetch.clotho.Source
-import java.net.InetAddress
 import java.net.NetworkInterface
 
 /**
  * Broadcast address for this computer
  */
-class BroadcastAddressCp : Source<List<InetAddress>> {
-    override fun value(): List<InetAddress> {
-        val result = ArrayList<InetAddress>()
+class BroadcastAddressCp : Source<List<Target>> {
+    override fun value(): List<Target> {
+        val result = ArrayList<Target>()
         val nis = NetworkInterface.getNetworkInterfaces()
         while (nis.hasMoreElements()) {
-            BroadcastAddressNi(nis.nextElement()).value()?.run {
-                result.add(this)
+            val networkInterface = nis.nextElement()
+            BroadcastAddressNi(networkInterface).value()?.run {
+                result.add(
+                    TargetImpl(
+                        networkInterface,
+                        this
+                    )
+                )
             }
         }
         return result
