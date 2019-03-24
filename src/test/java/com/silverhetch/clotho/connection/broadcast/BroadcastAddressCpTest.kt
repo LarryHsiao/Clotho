@@ -10,6 +10,12 @@ class BroadcastAddressCpTest {
     @Test
     fun simple() {
         BroadcastAddressCp().value().run {
+            forEach {
+                System.out.println("""
+                   ${it.name()}
+                   ${it.interfaceInetAddress()}
+               """.trimIndent())
+            }
             assertTrue(size > 0)
         }
     }
