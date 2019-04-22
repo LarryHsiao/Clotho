@@ -10,7 +10,7 @@ class StringSourceTest {
         with("Actual") {
             assertEquals(
                 "Actual",
-                StringSource(this).fetch()
+                StringSource(this).value()
             )
         }
 

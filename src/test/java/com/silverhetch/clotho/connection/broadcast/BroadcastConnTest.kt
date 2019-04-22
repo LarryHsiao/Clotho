@@ -1,23 +1,18 @@
 package com.silverhetch.clotho.connection.broadcast
 
-import com.silverhetch.clotho.Source
 import com.silverhetch.clotho.source.ConstSource
 import org.junit.Assert
-import org.junit.Assert.*
-import org.junit.Ignore
 import org.junit.Test
-import java.lang.RuntimeException
-import java.net.*
-import java.util.Enumeration
+import java.net.DatagramPacket
 import java.net.DatagramSocket
-import java.net.InetSocketAddress
 import java.net.InetAddress
-import java.net.NetworkInterface
 import java.util.concurrent.CountDownLatch
 import java.util.concurrent.TimeUnit
 import kotlin.text.Charsets.UTF_8
 
-
+/**
+ * Test for [BroadcastConn]
+ */
 class BroadcastConnTest {
     @Test
     fun simple() {

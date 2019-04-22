@@ -6,7 +6,7 @@ import org.junit.Test
 class TempConnTest {
     @Test
     fun simple() {
-        TempConn().fetch().use {
+        TempConn().value().use {
             assertTrue(it.isValid(0))
         }
     }

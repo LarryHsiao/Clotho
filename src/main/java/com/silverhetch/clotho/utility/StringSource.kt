@@ -6,7 +6,7 @@ import com.silverhetch.clotho.Source
  * String source just represent content of String.
  */
 class StringSource(private val content: String) : Source<String> {
-    override fun fetch(): String {
+    override fun value(): String {
         return content
     }
 }

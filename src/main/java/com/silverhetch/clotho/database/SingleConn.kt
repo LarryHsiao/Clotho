@@ -8,9 +8,9 @@ import java.sql.Connection
  */
 class SingleConn(private val source: Source<Connection>) : Source<Connection> {
     private lateinit var connection: Connection
-    override fun fetch(): Connection {
+    override fun value(): Connection {
         if (!::connection.isInitialized || connection.isClosed) {
-            connection = source.fetch()
+            connection = source.value()
         }
         return connection
     }

@@ -11,11 +11,11 @@ class HexStringTest {
             "414243",
             HexString(
                 object : Source<ByteArray> {
-                    override fun fetch(): ByteArray {
+                    override fun value(): ByteArray {
                         return "ABC".toByteArray()
                     }
                 }
-            ).fetch()
+            ).value()
         )
     }
 }

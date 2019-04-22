@@ -7,9 +7,9 @@ import java.util.*
  * Convert to hex from given data.
  */
 class HexString(private val bytes: Source<ByteArray>) : Source<String> {
-    override fun fetch(): String {
+    override fun value(): String {
         with(Formatter()) {
-            for (byte in bytes.fetch()) {
+            for (byte in bytes.value()) {
                 format("%02x", byte)
             }
 

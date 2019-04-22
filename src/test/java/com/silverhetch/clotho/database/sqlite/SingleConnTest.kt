@@ -11,7 +11,7 @@ class SingleConnTest {
         SingleConn(
             InMemoryConn()
         ).let {
-            assertEquals(it.fetch(), it.fetch())
+            assertEquals(it.value(), it.value())
         }
     }
 }

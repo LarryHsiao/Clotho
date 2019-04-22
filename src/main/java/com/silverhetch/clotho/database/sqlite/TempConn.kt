@@ -7,7 +7,7 @@ import java.sql.Connection
  * A sqlite database actually create temporary file. Each instance has separates database.
  */
 class TempConn : Source<Connection> {
-    override fun fetch(): Connection {
-        return SQLiteConn("").fetch()
+    override fun value(): Connection {
+        return SQLiteConn("").value()
     }
 }

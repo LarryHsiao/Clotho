@@ -28,7 +28,7 @@ class TimedCountGatewayTest {
             triggered = true
         }
         for (i in 0..10) {
-            gateway.fetch()
+            gateway.value()
         }
 
         assertTrue(triggered)
@@ -44,7 +44,7 @@ class TimedCountGatewayTest {
             triggered = true
         }
         for (i in 0..9) {
-            gateway.fetch()
+            gateway.value()
         }
 
         assertFalse(triggered)

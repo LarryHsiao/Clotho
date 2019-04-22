@@ -22,7 +22,7 @@ class CountedGatewayTest {
         ) {
             Assert.fail()
         }
-        gateway.fetch()
+        gateway.value()
     }
 
     @Test
@@ -34,8 +34,8 @@ class CountedGatewayTest {
         ) {
             triggered = true
         }
-        gateway.fetch()
-        gateway.fetch()
+        gateway.value()
+        gateway.value()
 
         Assert.assertTrue(triggered)
     }

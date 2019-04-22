@@ -7,7 +7,7 @@ import com.silverhetch.clotho.Source
  * @todo #refactor-1 remove this class which is redundant
  */
 class ConstSource<T>(private val value: T) : Source<T> {
-    override fun fetch(): T {
+    override fun value(): T {
         return value
     }
 }

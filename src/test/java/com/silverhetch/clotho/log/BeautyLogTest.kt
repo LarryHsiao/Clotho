@@ -5,7 +5,7 @@ import org.junit.Test
 class BeautyLogTest {
     @Test
     fun simple() {
-        BeautyLog().fetch().apply {
+        BeautyLog().value().apply {
             info("Info")
             warning("Warning")
             error("Error")
