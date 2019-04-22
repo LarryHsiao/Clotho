@@ -10,17 +10,17 @@ import java.util.Calendar.*
  *
  * @param range The given range in milliseconds, First one is Ended Date, and the seconds one is Started date.
  */
-class DateRangeSource(private val range: Source<Pair<Long, Long>>) : Source<Pair<Long, Long>> {
+class DateRangeSource(private val timeZone: TimeZone, private val range: Source<Pair<Long, Long>>) : Source<Pair<Long, Long>> {
     override fun value(): Pair<Long, Long> {
         val value = range.value()
         return Pair(
-            Calendar.getInstance(TimeZone.getTimeZone("GMT")).apply {
+            Calendar.getInstance(timeZone).apply {
                 time = Date(value.first)
                 set(HOUR_OF_DAY, 23)
                 set(MINUTE, 59)
                 set(SECOND, 59)
             }.timeInMillis,
-            Calendar.getInstance(TimeZone.getTimeZone("GMT")).apply {
+            Calendar.getInstance(timeZone).apply {
                 time = Date(value.second)
                 set(HOUR_OF_DAY, 0)
                 set(MINUTE, 0)
