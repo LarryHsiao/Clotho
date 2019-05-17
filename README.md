@@ -1,8 +1,7 @@
 Clotho
 ------
 
-A Java library used in all my stuff.
-Still a mess here, setting up the tools.
+Library for reuse utilities objects.
 
 [![Build Status](https://travis-ci.org/LarryHsiao/Clotho.svg?branch=master)](https://travis-ci.org/LarryHsiao/Clotho)
 [![SonarQube](https://silverhetch.com:9100/api/project_badges/measure?project=Clotho&metric=alert_status)](https://silverhetch.com:9100/dashboard?id=Clotho)
