@@ -12,17 +12,12 @@ buildscript {
     }
 }
 
-plugins {
-    id 'com.silverhetch.thea' version '1.2.1'
-}
 
 apply plugin: 'java-library'
 apply plugin: 'kotlin'
 
 sourceCompatibility = 1.7
-def clothoVersion = thea.version.versionByFlavor("").versionName()
-
-println(thea.versionIndicator.apply(""))
+def clothoVersion = "v1.5.1"
 
 repositories {
     mavenCentral()
