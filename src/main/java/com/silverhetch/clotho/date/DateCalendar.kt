@@ -3,9 +3,12 @@ package com.silverhetch.clotho.date
 import com.silverhetch.clotho.Source
 import java.util.*
 
-class DateCalendar(private val millis: Long) : Source<Calendar> {
+/**
+ * Source to generate Calendar which time is 00:00 am of the given timestamp.
+ */
+class DateCalendar(private val millis: Long, private val calendar: Calendar = Calendar.getInstance()) : Source<Calendar> {
     override fun value(): Calendar {
-        return Calendar.getInstance().apply {
+        return calendar.apply {
             timeInMillis = millis
             set(Calendar.HOUR_OF_DAY, 0)
             set(Calendar.MINUTE, 0)
