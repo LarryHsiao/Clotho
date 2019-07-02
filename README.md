@@ -3,6 +3,8 @@ Clotho
 
 Library for reuse utilities objects.
 
+[![PDD status](http://www.0pdd.com/svg?name=LarryHsiao/Clotho)](http://www.0pdd.com/p?name=LarryHsiao/Clotho)
+
 [![Build Status](https://travis-ci.org/LarryHsiao/Clotho.svg?branch=master)](https://travis-ci.org/LarryHsiao/Clotho)
 [![SonarQube](https://larryhsiao.com:9100/api/project_badges/measure?project=Clotho&metric=alert_status)](https://larryhsiao.com:9100/dashboard?id=Clotho)
 [![codebeat badge](https://codebeat.co/badges/ea6a7226-5e4d-429b-b61c-79b37e069eca)](https://codebeat.co/projects/github-com-larryhsiao-clotho-master)
