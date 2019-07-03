@@ -8,6 +8,9 @@ import java.nio.file.Files
  * Tests for [com.silverhetch.clotho.file.FileSize].
  */
 class FileSizeTest {
+    /**
+     * Check file size is same as input.
+     */
     @Test
     fun textFileSize() {
         val tempFile = Files.createTempFile("Prefix", "")

@@ -8,6 +8,9 @@ import java.nio.file.Files
  * Tests for [com.silverhetch.clotho.file.TextFile].
  */
 class TextFileTest {
+    /**
+     * Check the read/write result is same as input.
+     */
     @Test
     fun simple() {
         val tempFile = Files.createTempFile("Prefix", "")
