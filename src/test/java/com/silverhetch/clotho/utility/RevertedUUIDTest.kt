@@ -4,7 +4,13 @@ import org.junit.Assert.assertEquals
 import org.junit.Test
 import java.util.*
 
+/**
+ * Test for [RevertedUUID]
+ */
 class RevertedUUIDTest {
+    /**
+     * Check the uuid is revert properly.
+     */
     @Test
     fun simple() {
         assertEquals(

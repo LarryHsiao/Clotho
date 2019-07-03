@@ -4,7 +4,13 @@ import org.junit.Assert.assertEquals
 import org.junit.Assert.fail
 import org.junit.Test
 
+/**
+ * Test for ANSIColorLog
+ */
 class ANSIColorLogTest {
+    /**
+     * Test info output
+     */
     @Test
     fun info() {
         ANSIColorLog(object : Log {
@@ -26,6 +32,9 @@ class ANSIColorLogTest {
         }).info("")
     }
 
+    /**
+     * Test warning output
+     */
     @Test
     fun warning() {
         ANSIColorLog(object : Log {
@@ -47,6 +56,9 @@ class ANSIColorLogTest {
         }).warning("")
     }
 
+    /**
+     * Test error output
+     */
     @Test
     fun error() {
         ANSIColorLog(object : Log {
@@ -68,6 +80,9 @@ class ANSIColorLogTest {
         }).error("")
     }
 
+    /**
+     * Test debug output
+     */
     @Test
     fun debug() {
         ANSIColorLog(object : Log {

@@ -2,6 +2,9 @@ package com.silverhetch.clotho.connection.broadcast
 
 import java.net.InetAddress
 
+/**
+ * Phantom object Of [Target]
+ */
 class PhantomTarget : Target {
     override fun name(): String {
         return "PhantomTarget"

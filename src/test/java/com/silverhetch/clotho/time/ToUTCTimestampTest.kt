@@ -4,6 +4,9 @@ import org.junit.Assert.*
 import org.junit.Test
 import java.util.*
 
+/**
+ * Test for [ToUTCTimestamp]
+ */
 class ToUTCTimestampTest {
     /**
      * Check if the converted UTC time is same as system provided UTC time. (tolerance: 1 second)
