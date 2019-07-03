@@ -1,5 +1,8 @@
 package com.silverhetch.clotho.date.recurring
 
+/**
+ * Implemented [Meta] with constants
+ */
 class ConstMeta(
     private val start: Long,
     private val interval: Long,
