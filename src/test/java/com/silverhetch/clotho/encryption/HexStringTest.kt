@@ -4,7 +4,13 @@ import com.silverhetch.clotho.Source
 import org.junit.Assert.*
 import org.junit.Test
 
+/**
+ * Text for [HexString]
+ */
 class HexStringTest {
+    /***
+     * CHeck the hex result.
+     */
     @Test
     fun simple() {
         assertEquals(
