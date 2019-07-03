@@ -3,7 +3,13 @@ package com.silverhetch.clotho.utility.comparator
 import org.junit.Assert.*
 import org.junit.Test
 
+/**
+ * Test for [StringComparator]
+ */
 class StringComparatorTest {
+    /**
+     * If the string is the same
+     */
     @Test
     fun checkEqual() {
         assertEquals(
@@ -12,6 +18,9 @@ class StringComparatorTest {
         )
     }
 
+    /**
+     * If the string is not the same
+     */
     @Test
     fun simple() {
         assertEquals(
@@ -20,6 +29,9 @@ class StringComparatorTest {
         )
     }
 
+    /**
+     * Check the reserved flag.
+     */
     @Test
     fun simple_reversed() {
         assertEquals(

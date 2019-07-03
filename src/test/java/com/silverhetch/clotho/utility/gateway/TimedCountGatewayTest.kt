@@ -7,7 +7,13 @@ import com.silverhetch.clotho.storage.DbCeres
 import org.junit.Assert.*
 import org.junit.Test
 
+/**
+ * Test for [TimedCountGateway]
+ */
 class TimedCountGatewayTest {
+    /**
+     * Trigger once should not trigger the callback
+     */
     @Test
     fun singleTrigger() {
         TimedCountGateway(
@@ -19,6 +25,9 @@ class TimedCountGatewayTest {
     }
 
 
+    /**
+     * should trigger after exceed max times
+     */
     @Test
     fun multiTrigger_grater() {
         var triggered = false
@@ -34,7 +43,9 @@ class TimedCountGatewayTest {
         assertTrue(triggered)
     }
 
-
+    /**
+     * Should not trigger when have multi triggered but less then the max
+     */
     @Test
     fun multiTrigger_less() {
         var triggered = false

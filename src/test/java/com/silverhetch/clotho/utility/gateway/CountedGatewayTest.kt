@@ -25,6 +25,9 @@ class CountedGatewayTest {
         gateway.value()
     }
 
+    /**
+     * Check that it should trigger the delegation.
+     */
     @Test
     fun graterMaxCount_triggered() {
         var triggered = false
