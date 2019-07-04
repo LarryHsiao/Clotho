@@ -4,6 +4,9 @@ import org.junit.Assert
 import org.junit.Test
 import java.util.*
 
+/**
+ * Test class for [Meta]
+ */
 class MetaRecurringTest {
     @Test
     fun allDays() {
@@ -26,7 +29,9 @@ class MetaRecurringTest {
     fun fistDayOfSecondWeekOfMonth() {
         MetaRecurring(
             ConstMeta(
-                System.currentTimeMillis(),
+                Calendar.getInstance().also {
+                    it.set(2019, 6, 30)
+                }.timeInMillis,
                 0L,
                 0, 0, 0, 2, 1
             )

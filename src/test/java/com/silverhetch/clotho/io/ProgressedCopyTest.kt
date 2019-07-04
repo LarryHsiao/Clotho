@@ -1,6 +1,7 @@
 package com.silverhetch.clotho.io
 
-import com.sun.xml.internal.messaging.saaj.util.ByteOutputStream
+import com.silverhetch.clotho.encryption.MD5
+import com.sun.xml.internal.messaging.saaj.util.ByteInputStream
 import org.junit.Assert.assertEquals
 import org.junit.Test
 import java.io.*
@@ -16,12 +17,15 @@ class ProgressedCopyTest {
      */
     @Test
     fun checkSize() {
+        val random = Random(System.currentTimeMillis())
         val expectedLength = 8096 * 100
-        var copiedLength = 0L
+        var copiedLength = 0
         ProgressedCopy(
-            ByteArrayInputStream(ByteArray(expectedLength) {
-                1.toByte()
-            }),
+            ByteArrayInputStream(
+                Array(expectedLength) {
+                   random.nextBytes(1)[0]
+                }.toByteArray()
+            ),
             object : OutputStream() {
                 override fun write(b: Int) {
                     // leave it empty
@@ -30,7 +34,7 @@ class ProgressedCopyTest {
         ) { copiedLength = it }.value()
 
         assertEquals(
-            expectedLength.toLong(),
+            expectedLength,
             copiedLength
         )
     }
@@ -51,6 +55,28 @@ class ProgressedCopyTest {
         assertEquals(
             input,
             String(output.toByteArray())
+        )
+    }
+
+
+    /**
+     * Check copied result with md5
+     */
+    @Test
+    fun checkCopiedResultMD5() {
+        val random = Random(System.currentTimeMillis())
+        val input = ByteArray(8096 * 100) {
+            random.nextBytes(1)[0]
+        }
+        val output = ByteArrayOutputStream(input.size)
+        ProgressedCopy(
+            ByteArrayInputStream(input),
+            output
+        ) {}.value()
+
+        assertEquals(
+            MD5(ByteArrayInputStream(input)).value(),
+            MD5(ByteArrayInputStream(output.toByteArray())).value()
         )
     }
 }

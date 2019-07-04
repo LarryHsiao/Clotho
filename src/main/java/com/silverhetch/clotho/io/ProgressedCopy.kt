@@ -10,17 +10,16 @@ import java.io.OutputStream
 class ProgressedCopy(
     private val input: InputStream,
     private val output: OutputStream,
-    private val progress: (copied: Long) -> Unit
+    private val progress: (copied: Int) -> Unit
 ) : Source<Unit> {
     override fun value() {
-        val buf = ByteArray(8096)
-        var totalLength = 0L
-        var readLength = input.read(buf)
-        while (readLength != -1) {
-            output.write(buf, 0, readLength)
-            totalLength += readLength
+        var readed = input.read()
+        var totalLength = 0
+        while (readed != -1) {
+            output.write(readed)
+            totalLength += 1
             progress(totalLength)
-            readLength = input.read()
+            readed = input.read()
         }
         input.close()
         output.close()
