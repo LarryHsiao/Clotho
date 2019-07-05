@@ -1,7 +1,7 @@
 package com.silverhetch.clotho
 
 /**
- * Data source with Type <T>.
+ * Builder class with Type <T>.
  */
 interface Source<T> {
     /**
