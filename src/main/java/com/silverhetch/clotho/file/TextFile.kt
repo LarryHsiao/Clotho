@@ -12,7 +12,7 @@ class TextFile(
     private val text: String
 ) : Source<File> {
     override fun value(): File {
-        FileWriter(file).use {
+        FileWriter(file,true).use {
             it.write(text)
         }
         return file

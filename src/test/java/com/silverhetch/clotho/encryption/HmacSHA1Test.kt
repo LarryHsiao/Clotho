@@ -9,7 +9,7 @@ class HmacSHA1Test {
     @Test
     fun simple() {
         Assert.assertEquals(
-            "565a8e07219d855978015554920f01856470e158",
+            "565a8e07219d855978015554920f01856470e158".toUpperCase(),
             HexString(
                 HmacSHA1(
                     object : Source<ByteArray> {
@@ -17,7 +17,7 @@ class HmacSHA1Test {
                             return "ABC".toByteArray()
                         }
                     }, "ThisIsSecretKey"
-                )
+                ).value()
             ).value()
         )
     }
