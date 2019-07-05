@@ -2,13 +2,18 @@ package com.silverhetch.clotho.encryption
 
 import com.silverhetch.clotho.Source
 import java.util.*
-import javax.xml.bind.DatatypeConverter
 
 /**
  * Convert to hex from given data.
  */
-class HexString(private val bytes: ByteArray) : Source<String> {
+class HexString(private val bytes: Source<ByteArray>) : Source<String> {
     override fun value(): String {
-        return DatatypeConverter.printHexBinary(bytes)
+        with(Formatter()) {
+            for (byte in bytes.value()) {
+                format("%02x", byte)
+            }
+
+            return toString()
+        }
     }
 }
