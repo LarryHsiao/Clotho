@@ -1,17 +1,14 @@
 package com.silverhetch.clotho.file
 
-import com.silverhetch.clotho.encryption.MD5
 import org.junit.Assert.assertEquals
 import org.junit.Ignore
 import org.junit.Test
 import java.io.File
-import java.nio.charset.Charset
-import kotlin.random.Random
 
 /**
- * Tests for [com.silverhetch.clotho.file.FileCopy].
+ * Tests for [com.silverhetch.clotho.file.ToFile].
  */
-class FileCopyTest {
+class ToFileTest {
 
     /**
      * Check the copied file content.
@@ -22,7 +19,7 @@ class FileCopyTest {
         val src = File.createTempFile("temp", "")
         val dst = File.createTempFile("dest", "")
         TextFile(src, sourceText).value()
-        FileCopy(src, dst) {}.value()
+        ToFile(src, dst) {}.fire()
         assertEquals(
             sourceText,
             FileText(dst).value()
@@ -42,7 +39,7 @@ class FileCopyTest {
         val src = File.createTempFile("temp", "")
         val dst = File.createTempFile("dest", "")
         TextFile(src, sourceText).value()
-        FileCopy(src, dst) {}.value()
+        ToFile(src, dst) {}.fire()
         assertEquals(
             sourceText,
             FileText(dst).value()

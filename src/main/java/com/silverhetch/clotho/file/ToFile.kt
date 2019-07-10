@@ -1,23 +1,39 @@
 package com.silverhetch.clotho.file
 
+import com.silverhetch.clotho.Action
 import com.silverhetch.clotho.Source
 import com.silverhetch.clotho.io.ProgressedCopy
 import java.io.File
 import java.io.FileInputStream
 import java.io.FileOutputStream
+import java.io.InputStream
 import javax.print.attribute.standard.Copies
 
 /**
- * Copy [File] source to target [File].
+ * Copy source to target [File].
  */
-class FileCopy(
-    private val src: File,
+class ToFile(
+    private val input: InputStream,
     private val dst: File,
     private val progress: (copied: Int) -> Unit
-) : Source<Unit> {
-    override fun value() {
+) : Action {
+
+    /**
+     * File to destination file
+     */
+    constructor(
+        src: File,
+        dst: File,
+        progress: (copied: Int) -> Unit
+    ) : this(
+        FileInputStream(src),
+        dst,
+        progress
+    )
+
+    override fun fire() {
         ProgressedCopy(
-            FileInputStream(src),
+            input,
             FileOutputStream(dst)
         ) { progress(it) }.value()
     }
