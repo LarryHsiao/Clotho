@@ -30,7 +30,6 @@ class ToFileTest {
     /**
      * Check the copied Large file content.
      */
-    @Ignore
     @Test
     fun checkContentLarge() {
         val sourceText = CharArray(8096) {
