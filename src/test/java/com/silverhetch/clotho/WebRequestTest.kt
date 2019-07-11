@@ -12,7 +12,6 @@ import java.net.HttpURLConnection.HTTP_OK
  * Created by Larry Hsiao on 2016/11/20.
  */
 class WebRequestTest {
-    @Ignore("Actual request")
     @Test
     fun getUrl() {
         val api = Get(TargetImpl("https://google.com"))
@@ -20,7 +19,6 @@ class WebRequestTest {
         assertEquals(HTTP_OK.toLong(), response.code.toLong())
     }
 
-    @Ignore("Actual request")
     @Test
     fun getNotExistUrl() {
         try {
