@@ -22,6 +22,9 @@ class SubFilesTest{
         )
     }
 
+    /**
+     * Throw exception if root is not a Directory.
+     */
     @Test
     fun notDirException() {
         try{
