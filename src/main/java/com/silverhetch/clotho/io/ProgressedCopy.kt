@@ -6,6 +6,8 @@ import java.io.OutputStream
 
 /**
  * Copy input stream to output stream.
+ *
+ * @todo #performance Improve performance.
  */
 class ProgressedCopy(
     private val input: InputStream,
