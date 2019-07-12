@@ -15,13 +15,14 @@ class ProgressedCopy(
     private val progress: (copied: Int) -> Unit
 ) : Source<Unit> {
     override fun value() {
-        var readed = input.read()
+        val buffer = ByteArray(1024*100)
+        var readed = input.read(buffer)
         var totalLength = 0
         while (readed != -1) {
-            output.write(readed)
-            totalLength += 1
+            output.write(buffer, 0, readed)
+            totalLength += readed
             progress(totalLength)
-            readed = input.read()
+            readed = input.read(buffer)
         }
         input.close()
         output.close()
