@@ -9,7 +9,7 @@ import java.nio.ByteBuffer;
 import static java.nio.ByteOrder.LITTLE_ENDIAN;
 
 /**
- * Action to convert PCM　raw audio file into playable Wave file.
+ * Action to convert PCM raw audio file into playable Wave file.
  */
 public class PcmToWav implements Action {
     private final File raw;
@@ -58,33 +58,12 @@ public class PcmToWav implements Action {
             for (short s : shorts) {
                 bytes.putShort(s);
             }
-            output.write(appendFile(rawFile));
+            output.write(new FileBytes(rawFile).value());
         } finally {
             if (output != null) {
                 output.close();
             }
         }
-    }
-
-    private byte[] appendFile(File f) throws IOException {
-        int size = (int) f.length();
-        byte[] bytes = new byte[size];
-        byte[] tmpBuff = new byte[size];
-        FileInputStream fis = new FileInputStream(f);
-        try {
-            int read = fis.read(bytes, 0, size);
-            if (read < size) {
-                int remain = size - read;
-                while (remain > 0) {
-                    read = fis.read(tmpBuff, 0, remain);
-                    System.arraycopy(tmpBuff, 0, bytes, size - remain, read);
-                    remain -= read;
-                }
-            }
-        } finally {
-            fis.close();
-        }
-        return bytes;
     }
 
     private void writeInt(final DataOutputStream output, final int value) throws IOException {
