@@ -2,6 +2,7 @@ package com.silverhetch.clotho.processor
 
 import org.junit.Assert.*
 import org.junit.Test
+import org.omg.CORBA.portable.UnknownException
 import java.lang.Exception
 import java.lang.RuntimeException
 
@@ -43,7 +44,7 @@ class ProcessorsTest {
             object : Processor<Any> {
                 override fun proceed(input: Any) {
                     counter++
-                    throw  Exception("Unexpected exception")
+                    throw  UnknownException(Exception())
                 }
             },
             object : Processor<Any> {
