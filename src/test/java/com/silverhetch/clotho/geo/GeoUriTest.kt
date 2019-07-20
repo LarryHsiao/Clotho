@@ -7,6 +7,9 @@ import org.junit.Test
  * Test for com.silverhetch.clotho.geo.GeoUri
  */
 class GeoUriTest {
+    /**
+     * Build result with latitude and longitude only
+     */
     @Test
     fun coordinatorOnly() {
         assertEquals(
@@ -18,6 +21,9 @@ class GeoUriTest {
         )
     }
 
+    /**
+     * Have parameters latitude, longitude and crs.
+     */
     @Test
     fun additionalCrs() {
         assertEquals(
@@ -30,6 +36,9 @@ class GeoUriTest {
         )
     }
 
+    /**
+     * Parameter latitude, longitude and uncertainly
+     */
     @Test
     fun additionalUncertainly() {
         assertEquals(
@@ -42,7 +51,9 @@ class GeoUriTest {
         )
     }
 
-
+    /**
+     * All parameter provided.
+     */
     @Test
     fun allParameter() {
         assertEquals(
