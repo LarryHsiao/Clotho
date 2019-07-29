@@ -2,6 +2,7 @@ package com.silverhetch.clotho.file
 
 import org.junit.Assert.*
 import org.junit.Test
+import java.io.IOException
 import java.nio.file.Files
 
 /**

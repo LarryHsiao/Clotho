@@ -18,13 +18,9 @@ class FileDelete(private val file: File) : Action {
             if (childFile.isDirectory) {
                 delete(childFile)
             } else {
-                if (!childFile.delete()) {
-                    throw IOException("Can not delete file: ${childFile.absolutePath}")
-                }
+                childFile.delete()
             }
         }
-        if (!file.delete()) {
-            throw IOException("Can not delete file: ${file.delete()}")
-        }
+        file.delete()
     }
 }
