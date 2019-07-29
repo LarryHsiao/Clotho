@@ -13,7 +13,8 @@ class FileDelete(private val file: File) : Action {
     }
 
     private fun delete(file: File) {
-        for (childFile in file.listFiles()!!) {
+        val childFiles = file.listFiles() ?: arrayOf()
+        for (childFile in childFiles) {
             if (childFile.isDirectory) {
                 delete(childFile)
             } else {
