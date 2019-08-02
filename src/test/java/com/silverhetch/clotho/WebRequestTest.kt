@@ -1,8 +1,6 @@
 package com.silverhetch.clotho
 
-import com.silverhetch.clotho.connection.Get
-import com.silverhetch.clotho.connection.TargetImpl
-import com.silverhetch.clotho.connection.WebRequest
+import com.silverhetch.clotho.connection.*
 import org.junit.Assert.*
 import org.junit.Ignore
 import org.junit.Test
@@ -57,5 +55,24 @@ class WebRequestTest {
     fun methodSpec() {
         val method = WebRequest::class.java.getMethod("request")
         assertEquals(0, method.exceptionTypes.size.toLong())
+    }
+
+    /**
+     * Check result is the same with header.
+     *
+     * @todo #1 test the sending header is the same as input
+     */
+    @Test
+    fun withHeader() {
+        val api = Get(TargetImpl("https://google.com"),
+            object : Headers {
+                override fun values(): Map<String, String> {
+                    return hashMapOf(
+                        Pair("key", "value")
+                    )
+                }
+            })
+        val response = api.request()
+        assertEquals(HTTP_OK.toLong(), response.code.toLong())
     }
 }

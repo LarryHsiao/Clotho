@@ -34,10 +34,10 @@ class SocketConnTest {
         socket.connect(InetSocketAddress("localhost", 12305))
         SocketConn(socket) { conn, msg ->
             outputString = msg
-        }.apply {
-            launch()
+        }.use {
+            it.launch()
             Thread.sleep(150)
-            send(inputString)
+            it.send(inputString)
             Thread.sleep(150)
             Assert.assertEquals(
                 inputString,

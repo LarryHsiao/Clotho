@@ -9,6 +9,8 @@ import java.security.NoSuchAlgorithmException
 
 /**
  * Calculate MD5 of [InputStream].
+ *
+ *
  */
 class MD5(private val input: InputStream) : Source<String> {
     override fun value(): String {
@@ -24,8 +26,6 @@ class MD5(private val input: InputStream) : Source<String> {
             input.close()
             return HexString(md.digest()).value()
         } catch (e: NoSuchAlgorithmException) {
-            e.printStackTrace()
-        } catch (e: FileNotFoundException) {
             e.printStackTrace()
         } catch (e: IOException) {
             e.printStackTrace()
