@@ -10,10 +10,6 @@ import java.sql.SQLException
  */
 class SQLiteConn(private val name: String) : Source<Connection> {
     override fun value(): Connection {
-        try {
-            return DriverManager.getConnection("jdbc:sqlite:$name")
-        } catch (e: SQLException) {
-            throw RuntimeException(e)
-        }
+        return DriverManager.getConnection("jdbc:sqlite:$name")
     }
 }
