@@ -43,6 +43,9 @@ class ObservableWrapperTest{
         assertFalse(hasUpdate.get())
     }
 
+    /**
+     * Check the value changed using wrapped object.
+     */
     @Test
     fun hasValueChanged() {
         val observableImpl = ObservableImpl("")
