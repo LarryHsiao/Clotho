@@ -25,7 +25,7 @@ class IPv4MappingTest{
     @Test
     fun checkIPv4() {
         IPv4Mapping().value().forEach {
-            assertTrue(IsIPv4(it.value.hostName).value())
+            assertTrue(IsIPv4(it.value.hostAddress).value())
         }
     }
 }
