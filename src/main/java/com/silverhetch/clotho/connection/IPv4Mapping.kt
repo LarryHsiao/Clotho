@@ -28,15 +28,9 @@ class IPv4Mapping : Source<Map<String, InetAddress>> {
         val e = NetworkInterface.getNetworkInterfaces()
         while (e.hasMoreElements()) {
             val n = e.nextElement()
-            if (n !is NetworkInterface) {
-                continue
-            }
             val ee = n.inetAddresses
             while (ee.hasMoreElements()) {
                 val i = ee.nextElement()
-                if (i !is InetAddress) {
-                    continue
-                }
                 val currentAddress = i.hostAddress
                 if (!i.isLoopbackAddress && IsIPv4(currentAddress).value()) {
                     result[n.displayName] = i
