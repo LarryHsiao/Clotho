@@ -4,10 +4,8 @@ import com.silverhetch.clotho.Source
 import com.silverhetch.clotho.regex.IsIPv4
 import java.net.InetAddress
 import java.net.UnknownHostException
-import java.util.Enumeration
 import java.net.NetworkInterface
 import java.net.SocketException
-
 
 /**
  * Source to build IPv4 address which current machine have.

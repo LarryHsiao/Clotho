@@ -3,7 +3,10 @@ package com.silverhetch.clotho.utility.color
 import org.junit.Assert.*
 import org.junit.Test
 
-class BlueIntTest{
+/**
+ * Test for [BlueInt]
+ */
+class BlueIntTest {
     @Test
     fun simple() {
         assertEquals(

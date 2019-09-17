@@ -1,9 +1,5 @@
 package com.silverhetch.clotho.processor
 
-import com.silverhetch.clotho.log.Log
-import com.silverhetch.clotho.log.PhantomLog
-import java.lang.Exception
-
 /**
  * Decorator to proceed input object with multiple [Processor]
  */

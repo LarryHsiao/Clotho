@@ -21,7 +21,6 @@ interface CoffeePot {
      */
     fun light(): Observable<Boolean>
 
-
     /**
      * @return true if [CoffeePot] is brewing coffee.
      */

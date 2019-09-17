@@ -54,7 +54,6 @@ class CurrencyNumberTest {
         )
     }
 
-
     @Test
     fun twd_us() {
         assertEquals(
@@ -66,7 +65,6 @@ class CurrencyNumberTest {
             ).value()
         )
     }
-
 
     @Test
     fun aed_arAE() {
@@ -139,7 +137,6 @@ class CurrencyNumberTest {
             ).value()
         )
     }
-
 
     @Test
     fun uah_ukUA_endWithSymbol() {

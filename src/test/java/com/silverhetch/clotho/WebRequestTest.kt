@@ -1,8 +1,10 @@
 package com.silverhetch.clotho
 
-import com.silverhetch.clotho.connection.*
+import com.silverhetch.clotho.connection.Get
+import com.silverhetch.clotho.connection.Headers
+import com.silverhetch.clotho.connection.TargetImpl
+import com.silverhetch.clotho.connection.WebRequest
 import org.junit.Assert.*
-import org.junit.Ignore
 import org.junit.Test
 import java.net.HttpURLConnection.HTTP_OK
 
@@ -26,7 +28,6 @@ class WebRequestTest {
         } catch (e: Exception) {
             assertTrue(true)
         }
-
     }
 
     @Test
@@ -37,7 +38,6 @@ class WebRequestTest {
         } catch (e: Exception) {
             assertTrue(true)
         }
-
     }
 
     @Test
@@ -48,7 +48,6 @@ class WebRequestTest {
         } catch (e: Exception) {
             assertTrue(true)
         }
-
     }
 
     @Test

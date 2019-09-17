@@ -13,7 +13,6 @@ class IsMailTest {
         )
     }
 
-
     @Test
     fun negative_missing_com() {
         assertFalse(
@@ -22,7 +21,6 @@ class IsMailTest {
             ).value()
         )
     }
-
 
     @Test
     fun negative_missing_at() {

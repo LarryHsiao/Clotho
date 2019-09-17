@@ -1,7 +1,6 @@
 package com.silverhetch.clotho.io
 
 import com.silverhetch.clotho.encryption.MD5
-import com.sun.xml.internal.messaging.saaj.util.ByteInputStream
 import org.junit.Assert.assertEquals
 import org.junit.Test
 import java.io.*
@@ -23,7 +22,7 @@ class ProgressedCopyTest {
         ProgressedCopy(
             ByteArrayInputStream(
                 Array(expectedLength) {
-                   random.nextBytes(1)[0]
+                    random.nextBytes(1)[0]
                 }.toByteArray()
             ),
             object : OutputStream() {
@@ -38,7 +37,6 @@ class ProgressedCopyTest {
             copiedLength
         )
     }
-
 
     /**
      * Check copied result
@@ -57,7 +55,6 @@ class ProgressedCopyTest {
             String(output.toByteArray())
         )
     }
-
 
     /**
      * Check copied result with md5

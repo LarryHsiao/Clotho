@@ -12,11 +12,13 @@ import java.util.concurrent.Executors
 /**
  * Simple Broadcast handling class.
  */
-class BroadcastConn(private val socket: DatagramSocket,
-                    private val bufferSize: Int = 1024,
-                    private val broadcastDest: Source<InetAddress>,
-                    private val port: Int,
-                    private val onReceive: (packet: DatagramPacket) -> Unit) : TextBaseConn {
+class BroadcastConn(
+    private val socket: DatagramSocket,
+    private val bufferSize: Int = 1024,
+    private val broadcastDest: Source<InetAddress>,
+    private val port: Int,
+    private val onReceive: (packet: DatagramPacket) -> Unit
+) : TextBaseConn {
     private val sendThread: ExecutorService = Executors.newSingleThreadScheduledExecutor()
     private var running = false
 
@@ -38,7 +40,6 @@ class BroadcastConn(private val socket: DatagramSocket,
             }
         }.start()
     }
-
 
     override fun send(msg: String) {
         sendThread.submit {

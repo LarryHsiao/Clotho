@@ -24,7 +24,7 @@ class TextFileTest {
         ).value()
 
         assertEquals(
-            content.replace("\n",System.lineSeparator()),
+            content.replace("\n", System.lineSeparator()),
             FileText(
                 tempFile.toFile()
             ).value()

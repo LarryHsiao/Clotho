@@ -14,9 +14,11 @@ import java.util.concurrent.Executors
  * This class only handles stream reading and writing.
  * The connection should be established before initialize this class.
  */
-class TextBaseConnImpl(private val input: BufferedReader,
-                       private val output: BufferedWriter,
-                       private val proceedMessage: (conn: TextBaseConn, msg: String) -> Unit) : TextBaseConn {
+class TextBaseConnImpl(
+    private val input: BufferedReader,
+    private val output: BufferedWriter,
+    private val proceedMessage: (conn: TextBaseConn, msg: String) -> Unit
+) : TextBaseConn {
     private val sendThread: ExecutorService = Executors.newSingleThreadScheduledExecutor()
     private var running = false
 
@@ -37,7 +39,7 @@ class TextBaseConnImpl(private val input: BufferedReader,
                         this, readResult
                     )
                 }
-            }catch (e : IOException){
+            } catch (e: IOException) {
                 close()
             }
         }.start()
@@ -54,7 +56,7 @@ class TextBaseConnImpl(private val input: BufferedReader,
                     }
                 )
                 output.flush()
-            }catch (e: IOException){
+            } catch (e: IOException) {
                 close()
             }
         }

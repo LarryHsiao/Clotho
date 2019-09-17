@@ -1,7 +1,5 @@
 package com.silverhetch.clotho.storage
 
-import java.io.Closeable
-
 /**
  * Represent a key-value storage in [String].
  */

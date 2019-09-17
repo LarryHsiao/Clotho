@@ -8,8 +8,6 @@ import org.junit.Test
  * Tests for [com.silverhetch.clotho.SourceWrapper]
  */
 class SourceWrapperTest {
-
-
     /**
      * Check the value trigger in wrapper
      */

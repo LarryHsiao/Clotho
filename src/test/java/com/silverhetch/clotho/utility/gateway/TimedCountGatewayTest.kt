@@ -24,7 +24,6 @@ class TimedCountGatewayTest {
         assertTrue(true)
     }
 
-
     /**
      * should trigger after exceed max times
      */
