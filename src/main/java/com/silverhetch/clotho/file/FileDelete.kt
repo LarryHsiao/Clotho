@@ -2,7 +2,6 @@ package com.silverhetch.clotho.file
 
 import com.silverhetch.clotho.Action
 import java.io.File
-import java.io.IOException
 
 /**
  * Action to delete given file.

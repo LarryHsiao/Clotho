@@ -28,4 +28,3 @@ class ProgressedCopy(
         output.close()
     }
 }
-

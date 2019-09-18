@@ -7,7 +7,7 @@ import org.junit.Test
 /**
  * Tests for [com.silverhetch.clotho.connection.IPv4Mapping]
  */
-class IPv4MappingTest{
+class IPv4MappingTest {
     /**
      * Check the output
      */

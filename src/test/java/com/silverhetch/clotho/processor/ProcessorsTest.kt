@@ -1,10 +1,8 @@
 package com.silverhetch.clotho.processor
 
-import org.junit.Assert.*
+import org.junit.Assert.assertEquals
 import org.junit.Test
 import org.omg.CORBA.portable.UnknownException
-import java.lang.Exception
-import java.lang.RuntimeException
 
 /**
  * Test for com.silverhetch.clotho.processor.Processors
@@ -33,7 +31,6 @@ class ProcessorsTest {
         assertEquals(2, counter)
     }
 
-
     /**
      * Check not continue proceed next processor if exception throed
      */
@@ -44,7 +41,7 @@ class ProcessorsTest {
             object : Processor<Any> {
                 override fun proceed(input: Any) {
                     counter++
-                    throw  UnknownException(Exception())
+                    throw UnknownException(Exception())
                 }
             },
             object : Processor<Any> {
@@ -53,9 +50,6 @@ class ProcessorsTest {
                 }
             }
         ).proceed(Any())
-
         assertEquals(1, counter)
     }
-
-
 }

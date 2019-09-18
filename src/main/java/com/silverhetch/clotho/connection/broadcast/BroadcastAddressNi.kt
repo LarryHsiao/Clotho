@@ -13,7 +13,7 @@ class BroadcastAddressNi(private val networkInterface: NetworkInterface) : Sourc
     override fun value(): InetAddress? {
         val list = networkInterface.interfaceAddresses
         list.forEach {
-            if (it.broadcast !=null) {
+            if (it.broadcast != null) {
                 return it.broadcast
             }
         }

@@ -1,7 +1,6 @@
 package com.silverhetch.clotho.encryption
 
 import com.silverhetch.clotho.Source
-import java.io.FileNotFoundException
 import java.io.IOException
 import java.io.InputStream
 import java.security.MessageDigest

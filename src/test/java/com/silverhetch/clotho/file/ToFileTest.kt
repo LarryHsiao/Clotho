@@ -1,7 +1,6 @@
 package com.silverhetch.clotho.file
 
 import org.junit.Assert.assertEquals
-import org.junit.Ignore
 import org.junit.Test
 import java.io.File
 
@@ -25,7 +24,6 @@ class ToFileTest {
             FileText(dst).value()
         )
     }
-
 
     /**
      * Check the copied Large file content.

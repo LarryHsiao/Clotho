@@ -6,9 +6,11 @@ import com.silverhetch.clotho.storage.Ceres
 /**
  * A gate way that oi
  */
-class CountedGateway(private val preferenceSource: Source<Ceres>,
-                     private val maxCount: Int,
-                     private val delegate: () -> Unit) : Source<Unit> {
+class CountedGateway(
+    private val preferenceSource: Source<Ceres>,
+    private val maxCount: Int,
+    private val delegate: () -> Unit
+) : Source<Unit> {
     override fun value() {
         val preference = preferenceSource.value()
         val curr = preference.get("count").let {

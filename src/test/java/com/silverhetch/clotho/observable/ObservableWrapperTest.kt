@@ -7,10 +7,11 @@ import java.util.concurrent.atomic.AtomicBoolean
 /**
  * Tests for [com.silverhetch.clotho.observable.ObservableWrapper].
  */
-class ObservableWrapperTest{
+class ObservableWrapperTest {
     companion object {
         private const val INPUT_DATA = "update"
     }
+
     /**
      * It works using wrapped instance for addObserver
      */
@@ -37,8 +38,8 @@ class ObservableWrapperTest{
         val observableImpl = ObservableImpl("")
         val wrapped = ObservableWrapper(observableImpl)
         val observer = Observer<String> { observableImpl1, data -> hasUpdate.set(true) }
-        wrapped .addObserver(observer)
-        wrapped .removeObserver(observer)
+        wrapped.addObserver(observer)
+        wrapped.removeObserver(observer)
         observableImpl.notifyObservers(INPUT_DATA)
         assertFalse(hasUpdate.get())
     }
@@ -53,6 +54,7 @@ class ObservableWrapperTest{
         observableImpl.notifyObservers(INPUT_DATA)
         assertEquals(INPUT_DATA, wrapped.value())
     }
+
     /**
      * Check there has no change after clear observers.
      */

@@ -13,7 +13,6 @@ class LuminanceByColorTest {
         )
     }
 
-
     @Test
     fun black() {
         assertEquals(
@@ -22,7 +21,6 @@ class LuminanceByColorTest {
             0.0
         )
     }
-
 
     /**
      * Check Color(127,127,127), the luminance should be 0.4980(255/127)

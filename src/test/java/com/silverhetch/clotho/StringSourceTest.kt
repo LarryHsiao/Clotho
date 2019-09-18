@@ -13,6 +13,5 @@ class StringSourceTest {
                 StringSource(this).value()
             )
         }
-
     }
 }

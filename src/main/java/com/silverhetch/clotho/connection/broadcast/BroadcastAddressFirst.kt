@@ -1,7 +1,6 @@
 package com.silverhetch.clotho.connection.broadcast
 
 import com.silverhetch.clotho.Source
-import java.net.InetAddress
 
 /**
  * Source for first broadcast ip address that we can found

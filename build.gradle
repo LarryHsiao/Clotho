@@ -12,6 +12,9 @@ buildscript {
     }
 }
 
+plugins {
+    id "org.jlleitschuh.gradle.ktlint" version "8.2.0"
+}
 
 apply plugin: 'java-library'
 apply plugin: 'kotlin'
@@ -27,6 +30,10 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
     compile 'org.xerial:sqlite-jdbc:3.23.1'
+}
+
+afterEvaluate {
+    test.dependsOn ktlintCheck
 }
 
 jar {

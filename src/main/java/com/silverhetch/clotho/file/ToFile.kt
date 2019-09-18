@@ -1,13 +1,11 @@
 package com.silverhetch.clotho.file
 
 import com.silverhetch.clotho.Action
-import com.silverhetch.clotho.Source
 import com.silverhetch.clotho.io.ProgressedCopy
 import java.io.File
 import java.io.FileInputStream
 import java.io.FileOutputStream
 import java.io.InputStream
-import javax.print.attribute.standard.Copies
 
 /**
  * Copy source to target [File].

@@ -12,10 +12,11 @@ import com.silverhetch.clotho.storage.Ceres
  */
 class TimedCountGateway(
     private val preferenceSource: Source<Ceres>,
-    private val method: () -> Unit) : Source<Unit> {
+    private val method: () -> Unit
+) : Source<Unit> {
     companion object {
         private const val COUNT_MAX = 10
-        private const val DURATION_MAX_MILL = 10000;
+        private const val DURATION_MAX_MILL = 10000
     }
 
     private var lastTimestamp: Long = 0

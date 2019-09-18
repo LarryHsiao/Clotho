@@ -4,7 +4,7 @@ import org.junit.Assert.*
 import org.junit.Test
 import java.util.*
 
-class CurrencySymbolTest{
+class CurrencySymbolTest {
     @Test
     fun usd_us() {
         assertEquals(
@@ -20,7 +20,6 @@ class CurrencySymbolTest{
             CurrencySymbol("USD", Locale.TAIWAN).value()
         )
     }
-
 
     @Test
     fun usd_french() {
@@ -74,7 +73,7 @@ class CurrencySymbolTest{
     fun rub_ruRU() {
         assertEquals(
             "руб.",
-            CurrencySymbol("RUB", Locale("ru","RU")).value()
+            CurrencySymbol("RUB", Locale("ru", "RU")).value()
         )
     }
 }
