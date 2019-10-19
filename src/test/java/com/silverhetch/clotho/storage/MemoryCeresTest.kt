@@ -49,7 +49,6 @@ class MemoryCeresTest {
         assertEquals(value, ceres.all()[key])
     }
 
-
     /**
      * Check all value
      */

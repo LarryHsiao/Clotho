@@ -1,7 +1,6 @@
 package com.silverhetch.clotho.source
 
 import com.silverhetch.clotho.Source
-import com.silverhetch.clotho.storage.Ceres
 import com.silverhetch.clotho.storage.MemoryCeres
 import junit.framework.Assert.assertEquals
 import org.junit.Test
