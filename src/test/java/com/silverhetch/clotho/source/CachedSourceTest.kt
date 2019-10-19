@@ -16,18 +16,18 @@ class CachedSourceTest {
     @Test
     fun firstTime_origin() {
         val ceres = MemoryCeres()
-        val key = "sampleKey"
 
         assertEquals(
-            "0",
+            "1",
             CachedSource(
-                key,
+                "sampleKey",
                 0,
                 ceres,
                 object : Source<String> {
                     var counter = 0
                     override fun value(): String {
-                        return counter++.toString()
+                        counter = +1
+                        return counter.toString()
                     }
                 }
             ).value()
@@ -40,20 +40,20 @@ class CachedSourceTest {
     @Test
     fun secondTime_notExpired() {
         val ceres = MemoryCeres()
-        val key = "sampleKey"
         val source = CachedSource(
-            key,
+            "sampleKey01",
             100,
             ceres,
             object : Source<String> {
                 var counter = 0
                 override fun value(): String {
-                    return counter++.toString()
+                    counter += 1
+                    return counter.toString()
                 }
             }
         )
         source.value() // first time with origin
-        assertEquals("0", source.value())
+        assertEquals("1", source.value())
     }
 
     /**
@@ -62,15 +62,15 @@ class CachedSourceTest {
     @Test
     fun secondTime_expired() {
         val ceres = MemoryCeres()
-        val key = "sampleKey"
         val source = CachedSource(
-            key,
+            "sampleKey02",
             0,
             ceres,
             object : Source<String> {
                 var counter = 0
                 override fun value(): String {
-                    return counter++.toString()
+                    counter += 1
+                    return counter.toString()
                 }
             }
         )
@@ -78,7 +78,7 @@ class CachedSourceTest {
         Thread.sleep(1)
 
         assertEquals(
-            "1",
+            "2",
             source.value()
         )
     }
