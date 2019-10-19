@@ -24,8 +24,8 @@ class MemoryCeresTest {
      */
     @Test
     fun value() {
-        val key = "key"
-        val value = "value"
+        val key = "key1"
+        val value = "value01"
         val ceres = MemoryCeres().apply {
             this.store(key, value)
         }
@@ -40,8 +40,8 @@ class MemoryCeresTest {
      */
     @Test
     fun allValue() {
-        val key = "key"
-        val value = "value"
+        val key = "key2"
+        val value = "value02"
         val ceres = MemoryCeres().apply {
             this.store(key, value)
         }
@@ -54,8 +54,8 @@ class MemoryCeresTest {
      */
     @Test
     fun updateValue() {
-        val key = "key"
-        val value = "value"
+        val key = "key3"
+        val value = "value03"
         val newValue = "newValue"
         val ceres = MemoryCeres().apply {
             this.store(key, value)
