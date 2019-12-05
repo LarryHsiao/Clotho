@@ -151,4 +151,18 @@ class CurrencyNumberTest {
             )
         )
     }
+
+    @Test
+    fun nonExist() {
+        assertTrue(
+            CurrencyNumber(
+                BigDecimal.valueOf(1000),
+                Currency.getInstance("UAH"),
+                Locale("uk", "UA")
+            ).value().endsWith(
+                Currency.getInstance("UAH")
+                    .getSymbol(Locale("uk", "UA"))
+            )
+        )
+    }
 }

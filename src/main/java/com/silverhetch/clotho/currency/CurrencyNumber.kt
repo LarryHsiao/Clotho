@@ -15,13 +15,8 @@ class CurrencyNumber(
     private val display: Locale
 ) : Source<String> {
     override fun value(): String {
-        return try {
-            DecimalFormat.getCurrencyInstance(display).apply {
-                currency = targetCurrency
-            }.format(value)
-        } catch (e: Exception) {
-            e.printStackTrace()
-            value.stripTrailingZeros().toString()
-        }
+        return DecimalFormat.getCurrencyInstance(display).apply {
+            currency = targetCurrency
+        }.format(value)
     }
 }

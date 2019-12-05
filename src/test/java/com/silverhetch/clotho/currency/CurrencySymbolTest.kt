@@ -76,4 +76,20 @@ class CurrencySymbolTest {
             CurrencySymbol("RUB", Locale("ru", "RU")).value()
         )
     }
+
+    @Test
+    fun emptyValues() {
+        assertEquals(
+            "",
+            CurrencySymbol("", Locale("")).value()
+        )
+    }
+
+    @Test
+    fun nonExistCode() {
+        assertEquals(
+            "IDBCCCC",
+            CurrencySymbol("IDBCCCC", Locale("")).value()
+        )
+    }
 }
