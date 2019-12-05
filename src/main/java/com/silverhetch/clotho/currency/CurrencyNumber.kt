@@ -1,7 +1,6 @@
 package com.silverhetch.clotho.currency
 
 import com.silverhetch.clotho.Source
-import java.lang.Exception
 import java.math.BigDecimal
 import java.text.DecimalFormat
 import java.util.*
