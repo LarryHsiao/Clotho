@@ -19,5 +19,6 @@ public class IsImageTest {
         assertTrue(new IsImage(new File("image.png")).value());
         assertTrue(new IsImage(new File("image.jpg")).value());
         assertFalse(new IsImage(new File("image.abc")).value());
+        assertFalse(new IsImage(new File("image")).value());
     }
 }
