@@ -1,12 +1,13 @@
 package com.silverhetch.clotho.utility.comparator;
 
-import static org.junit.Assert.*;
 
 import org.junit.Test;
 
 import java.io.File;
 import java.nio.file.Files;
 import java.util.Comparator;
+
+import static org.junit.Assert.assertEquals;
 
 /**
  * Unit-test for the class {@link FileComparator}
