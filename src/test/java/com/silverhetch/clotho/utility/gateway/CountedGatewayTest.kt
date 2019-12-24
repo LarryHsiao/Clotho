@@ -1,7 +1,7 @@
 package com.silverhetch.clotho.utility.gateway
 
 import com.silverhetch.clotho.database.SingleConn
-import com.silverhetch.clotho.database.sqlite.InMemoryConn
+import com.silverhetch.clotho.database.sqlite.MemorySQLiteConn
 import com.silverhetch.clotho.source.ConstSource
 import com.silverhetch.clotho.storage.DbCeres
 import org.junit.Assert
@@ -17,7 +17,7 @@ class CountedGatewayTest {
     @Test
     fun underMaxCount_noTrigger() {
         val gateway = CountedGateway(
-            ConstSource(DbCeres(SingleConn(InMemoryConn()))),
+            ConstSource(DbCeres(SingleConn(MemorySQLiteConn()))),
             5
         ) {
             Assert.fail()
@@ -32,7 +32,7 @@ class CountedGatewayTest {
     fun graterMaxCount_triggered() {
         var triggered = false
         val gateway = CountedGateway(
-            ConstSource(DbCeres(SingleConn(InMemoryConn()))),
+            ConstSource(DbCeres(SingleConn(MemorySQLiteConn()))),
             1
         ) {
             triggered = true

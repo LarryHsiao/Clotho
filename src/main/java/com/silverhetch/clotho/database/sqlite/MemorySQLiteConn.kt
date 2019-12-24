@@ -6,7 +6,7 @@ import java.sql.Connection
 /**
  * SQLite database in pure memory. Each instance opens a different database.
  */
-class InMemoryConn : Source<Connection> {
+class MemorySQLiteConn : Source<Connection> {
     override fun value(): Connection {
         return SQLiteConn(":memory:").value()
     }

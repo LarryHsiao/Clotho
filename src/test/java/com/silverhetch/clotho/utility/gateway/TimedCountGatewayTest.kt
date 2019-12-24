@@ -1,7 +1,7 @@
 package com.silverhetch.clotho.utility.gateway
 
 import com.silverhetch.clotho.database.SingleConn
-import com.silverhetch.clotho.database.sqlite.InMemoryConn
+import com.silverhetch.clotho.database.sqlite.MemorySQLiteConn
 import com.silverhetch.clotho.source.ConstSource
 import com.silverhetch.clotho.storage.DbCeres
 import org.junit.Assert.*
@@ -17,7 +17,7 @@ class TimedCountGatewayTest {
     @Test
     fun singleTrigger() {
         TimedCountGateway(
-            ConstSource(DbCeres(SingleConn(InMemoryConn())))
+            ConstSource(DbCeres(SingleConn(MemorySQLiteConn())))
         ) {
             fail()
         }
@@ -31,7 +31,7 @@ class TimedCountGatewayTest {
     fun multiTrigger_grater() {
         var triggered = false
         val gateway = TimedCountGateway(
-            ConstSource(DbCeres(SingleConn(InMemoryConn())))
+            ConstSource(DbCeres(SingleConn(MemorySQLiteConn())))
         ) {
             triggered = true
         }
@@ -49,7 +49,7 @@ class TimedCountGatewayTest {
     fun multiTrigger_less() {
         var triggered = false
         val gateway = TimedCountGateway(
-            ConstSource(DbCeres(SingleConn(InMemoryConn())))
+            ConstSource(DbCeres(SingleConn(MemorySQLiteConn())))
         ) {
             triggered = true
         }

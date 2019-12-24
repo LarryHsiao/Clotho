@@ -4,15 +4,15 @@ import org.junit.Assert.*
 import org.junit.Test
 
 /**
- * Test for [TempConn]
+ * Test for [TempSQLiteConn]
  */
-class TempConnTest {
+class TempSQLiteConnTest {
     /**
      * Check the connection.
      */
     @Test
     fun simple() {
-        TempConn().value().use {
+        TempSQLiteConn().value().use {
             assertTrue(it.isValid(0))
         }
     }

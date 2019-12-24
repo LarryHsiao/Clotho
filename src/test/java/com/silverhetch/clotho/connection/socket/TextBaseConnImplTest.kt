@@ -1,8 +1,8 @@
 package com.silverhetch.clotho.connection.socket
 
-import com.sun.xml.internal.messaging.saaj.util.ByteOutputStream
 import org.junit.Assert
 import org.junit.Test
+import java.io.ByteArrayOutputStream
 
 /**
  * Test
@@ -15,7 +15,7 @@ class TextBaseConnImplTest {
     @Test
     fun content() {
         val inputString = "This is input" + System.lineSeparator()
-        val outputStream = ByteOutputStream(inputString.toByteArray().size)
+        val outputStream = ByteArrayOutputStream(inputString.toByteArray().size)
         TextBaseConnImpl(
             inputString.byteInputStream().bufferedReader(),
             outputStream.bufferedWriter()) { conn, input ->
@@ -38,7 +38,7 @@ class TextBaseConnImplTest {
     @Test
     fun nothingChangeIfTriggerLaunchManyTimes() {
         val inputString = "This is input" + System.lineSeparator()
-        val outputStream = ByteOutputStream(inputString.toByteArray().size)
+        val outputStream = ByteArrayOutputStream(inputString.toByteArray().size)
         TextBaseConnImpl(
             inputString.byteInputStream().bufferedReader(),
             outputStream.bufferedWriter()) { conn, input ->

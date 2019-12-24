@@ -1,7 +1,7 @@
 package com.silverhetch.clotho.storage
 
 import com.silverhetch.clotho.database.SingleConn
-import com.silverhetch.clotho.database.sqlite.InMemoryConn
+import com.silverhetch.clotho.database.sqlite.MemorySQLiteConn
 import org.junit.Assert
 import org.junit.Test
 
@@ -14,7 +14,7 @@ class DbCeresTest {
      */
     @Test
     fun simple() {
-        DbCeres(SingleConn(InMemoryConn())).also {
+        DbCeres(SingleConn(MemorySQLiteConn())).also {
             it.store("Key1", "value")
             Assert.assertEquals(
                 "value",
