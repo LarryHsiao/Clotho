@@ -20,7 +20,7 @@ apply plugin: 'java-library'
 apply plugin: 'kotlin'
 
 sourceCompatibility = 1.7
-def clothoVersion = "1.15.0"
+def clothoVersion = "1.15.1"
 
 repositories {
     mavenCentral()
@@ -29,7 +29,7 @@ repositories {
 dependencies {
     testCompile 'junit:junit:4.12'
     compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
-    compile 'org.xerial:sqlite-jdbc:3.23.1'
+    testRuntimeOnly 'org.xerial:sqlite-jdbc:3.23.1'
 }
 
 afterEvaluate {

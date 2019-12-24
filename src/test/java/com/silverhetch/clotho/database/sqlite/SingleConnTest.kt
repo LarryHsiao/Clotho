@@ -9,7 +9,7 @@ class SingleConnTest {
     @Test
     fun simple() {
         SingleConn(
-            InMemoryConn()
+            MemorySQLiteConn()
         ).let {
             assertEquals(it.value(), it.value())
         }

@@ -4,15 +4,15 @@ import org.junit.Assert
 import org.junit.Test
 
 /**
- * Test for [InMemoryConn]
+ * Test for [MemorySQLiteConn]
  */
-class InMemoryConnTest {
+class MemorySQLiteConnTest {
     /**
      * Check the jdbc connection is valid.
      */
     @Test
     fun noFileExist() {
-        InMemoryConn().value().use {
+        MemorySQLiteConn().value().use {
             Assert.assertTrue(it.isValid(0))
         }
     }
