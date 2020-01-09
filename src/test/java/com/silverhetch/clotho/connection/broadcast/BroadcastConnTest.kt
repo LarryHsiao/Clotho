@@ -18,7 +18,7 @@ class BroadcastConnTest {
     fun simple() {
         val countDownLatch = CountDownLatch(1)
         var packet = DatagramPacket(ByteArray(0), 0)
-        BroadcastConn(
+        val conn = BroadcastConn(
             DatagramSocket(8888, InetAddress.getByName("localhost")).apply {
                 broadcast = true
                 soTimeout = 1000
@@ -34,6 +34,7 @@ class BroadcastConnTest {
             send("ping")
         }
         countDownLatch.await(5, TimeUnit.SECONDS)
+        conn.close()
         Assert.assertTrue(String(packet.data, UTF_8).startsWith("ping"))
     }
 }
