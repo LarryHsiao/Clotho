@@ -5,6 +5,10 @@ import org.junit.Test
 import java.math.BigDecimal
 import java.util.*
 
+/**
+ * Notice: The result might changed in different version of JDK.
+ * Had check the result on open JDK 11, that this test will failed on JDK 8 or other implementation.
+ */
 class CurrencyNumberTest {
     @Test
     fun jpy_japan() {
@@ -45,7 +49,7 @@ class CurrencyNumberTest {
     @Test
     fun twd_tw() {
         assertEquals(
-            "NT$1,000.00",
+            "\$1,000.00",
             CurrencyNumber(
                 BigDecimal.valueOf(1000),
                 Currency.getInstance("TWD"),
@@ -57,7 +61,7 @@ class CurrencyNumberTest {
     @Test
     fun twd_us() {
         assertEquals(
-            "TWD1,000.00",
+            "NT\$1,000.00",
             CurrencyNumber(
                 BigDecimal.valueOf(1000),
                 Currency.getInstance("TWD"),
@@ -66,10 +70,15 @@ class CurrencyNumberTest {
         )
     }
 
+    /**
+     * For AED in ar_AE.
+     *
+     * @todo #currency-0 Make sure the numbers is in use in real world
+     */
     @Test
     fun aed_arAE() {
         assertEquals(
-            "د.إ.\u200F 1,000",
+            "د.إ.\u200F ١٬٠٠٠٫٠٠",
             CurrencyNumber(
                 BigDecimal.valueOf(1000),
                 Currency.getInstance("AED"),
@@ -81,7 +90,7 @@ class CurrencyNumberTest {
     @Test
     fun usd_french() {
         assertEquals(
-            "1 000,00 USD",
+            "1 000,00 \$US",
             CurrencyNumber(
                 BigDecimal.valueOf(1000),
                 Currency.getInstance("USD"),
@@ -93,7 +102,7 @@ class CurrencyNumberTest {
     @Test
     fun usd_arAE() {
         assertEquals(
-            "USD 1,000",
+            "US\$ ١٬٠٠٠٫٠٠",
             CurrencyNumber(
                 BigDecimal.valueOf(1000),
                 Currency.getInstance("USD"),
@@ -105,7 +114,7 @@ class CurrencyNumberTest {
     @Test
     fun sar_arSA() {
         assertEquals(
-            "ر.س.\u200F 1,000",
+            "ر.س.\u200F ١٬٠٠٠٫٠٠",
             CurrencyNumber(
                 BigDecimal.valueOf(1000),
                 Currency.getInstance("SAR"),
@@ -117,7 +126,7 @@ class CurrencyNumberTest {
     @Test
     fun rub_ruRU() {
         assertEquals(
-            "1 000 руб.",
+            "1 000,00 ₽",
             CurrencyNumber(
                 BigDecimal.valueOf(1000),
                 Currency.getInstance("RUB"),
@@ -129,7 +138,7 @@ class CurrencyNumberTest {
     @Test
     fun uah_ukUA() {
         assertEquals(
-            "1 000 грн.",
+            "1 000,00 ₴",
             CurrencyNumber(
                 BigDecimal.valueOf(1000),
                 Currency.getInstance("UAH"),
