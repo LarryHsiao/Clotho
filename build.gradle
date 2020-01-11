@@ -19,7 +19,7 @@ plugins {
 apply plugin: 'java-library'
 apply plugin: 'kotlin'
 
-def clothoVersion = "1.16.0"
+def clothoVersion = "1.16.1"
 
 repositories {
     mavenCentral()
