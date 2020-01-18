@@ -16,7 +16,7 @@ class CurrencySymbolTest {
     @Test
     fun usd_tw() {
         assertEquals(
-            "USD",
+            "US\$",
             CurrencySymbol("USD", Locale.TAIWAN).value()
         )
     }
@@ -24,7 +24,7 @@ class CurrencySymbolTest {
     @Test
     fun usd_french() {
         assertEquals(
-            "USD",
+            "\$US",
             CurrencySymbol("USD", Locale.FRENCH).value()
         )
     }
@@ -48,7 +48,7 @@ class CurrencySymbolTest {
     @Test
     fun jpy_china() {
         assertEquals(
-            "JPY",
+            "JP¥",
             CurrencySymbol("JPY", Locale.CHINA).value()
         )
     }
@@ -64,7 +64,7 @@ class CurrencySymbolTest {
     @Test
     fun cny_japan() {
         assertEquals(
-            "CNY",
+            "元",
             CurrencySymbol("CNY", Locale.JAPAN).value()
         )
     }
@@ -72,7 +72,7 @@ class CurrencySymbolTest {
     @Test
     fun rub_ruRU() {
         assertEquals(
-            "руб.",
+            "₽",
             CurrencySymbol("RUB", Locale("ru", "RU")).value()
         )
     }
