@@ -19,7 +19,7 @@ plugins {
 apply plugin: 'java-library'
 apply plugin: 'kotlin'
 
-def clothoVersion = "1.16.2"
+def clothoVersion = "1.16.3"
 
 repositories {
     mavenCentral()
@@ -29,6 +29,7 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
     testRuntimeOnly 'org.xerial:sqlite-jdbc:3.23.1'
+    testRuntimeOnly 'com.h2database:h2:1.4.200'
 }
 
 java {
