@@ -4,7 +4,6 @@ import com.silverhetch.clotho.Source
 import java.io.IOException
 import java.io.InputStream
 import java.security.MessageDigest
-import java.security.NoSuchAlgorithmException
 
 /**
  * Calculate MD5 of [InputStream].
@@ -24,8 +23,6 @@ class MD5(private val input: InputStream) : Source<String> {
             }
             input.close()
             return HexString(md.digest()).value()
-        } catch (e: NoSuchAlgorithmException) {
-            e.printStackTrace()
         } catch (e: IOException) {
             e.printStackTrace()
         }
