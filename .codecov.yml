@@ -1,8 +1,6 @@
 coverage:
-  status:
-    project:
-      target: 75%
-      threshold: 3%
+  round: down
+  range: "60..75"
   notify:
     slack:
       clotho_build:
