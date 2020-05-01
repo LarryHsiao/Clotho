@@ -2,7 +2,6 @@ package com.silverhetch.clotho.source
 
 import com.silverhetch.clotho.Source
 import com.silverhetch.clotho.storage.Ceres
-import com.silverhetch.clotho.time.ToUTCTimestamp
 import java.lang.NumberFormatException
 
 /**
@@ -25,7 +24,7 @@ class CachedSource(
     private val cachedKey = "$CACHED_KEY_$key"
 
     override fun value(): String {
-        val current = ToUTCTimestamp(System.currentTimeMillis()).value()
+        val current = System.currentTimeMillis()
         val tokenTime = tokenTime()
         return if (current - tokenTime > duration) {
             origin.value().apply {
