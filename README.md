@@ -6,6 +6,7 @@ Clotho
 Library for reuse utilities objects.
 
 [![PDD status](http://www.0pdd.com/svg?name=LarryHsiao/Clotho)](http://www.0pdd.com/p?name=LarryHsiao/Clotho)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FLarryHsiao%2FClotho.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2FLarryHsiao%2FClotho?ref=badge_shield)
 
 [![Build Status](https://travis-ci.org/LarryHsiao/Clotho.svg?branch=master)](https://travis-ci.org/LarryHsiao/Clotho)
 [![codebeat badge](https://codebeat.co/badges/ea6a7226-5e4d-429b-b61c-79b37e069eca)](https://codebeat.co/projects/github-com-larryhsiao-clotho-master)
@@ -17,3 +18,6 @@ Library for reuse utilities objects.
 
 
 @todo #0 Unit tests failed on JDK 11 
+
+## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FLarryHsiao%2FClotho.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2FLarryHsiao%2FClotho?ref=badge_large)
