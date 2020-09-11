@@ -23,7 +23,7 @@ class BroadcastConnTest {
                 broadcast = true
                 soTimeout = 1000
             },
-            1024,
+            4096,
             ConstSource(InetAddress.getByName("localhost")),
             8888
         ) { incoming ->
@@ -33,6 +33,7 @@ class BroadcastConnTest {
             launch()
             send("ping")
         }
+        conn.launch()
         countDownLatch.await(5, TimeUnit.SECONDS)
         conn.close()
         Assert.assertTrue(String(packet.data, UTF_8).startsWith("ping"))
