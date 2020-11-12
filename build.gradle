@@ -96,25 +96,9 @@ publishing {
             from components.java
             artifact sourcesJar
             artifact javadocJar
-            groupId 'com.silverhetch'
+            groupId 'com.larryhsiao'
             artifactId 'clotho'
             version clothoVersion
         }
-    }
-}
-
-apply plugin: 'org.sonarqube'
-sonarqube {
-    properties {
-        property "sonar.projectName", "Clotho"
-        property "sonar.projectVersion", "${clothoVersion}"
-
-        property 'sonar.sources', 'src/main/java'
-        property "sonar.tests", "src/test/java"
-
-//        property "sonar.java.binaries", "build/tmp/kotlin-classes/debug"
-
-        property "sonar.jacoco.reportPaths", "build/jacoco/test.exec"
-        property "sonar.junit.reportPahts", "build/test-results/test"
     }
 }
