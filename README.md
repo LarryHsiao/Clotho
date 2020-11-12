@@ -1,5 +1,3 @@
-@todo #android-1 test for Android platform from Android 6.0 to latest one.
-
 Clotho
 ------
 
@@ -14,6 +12,3 @@ Library for reuse utilities objects.
 [![Hits-of-Code](https://hitsofcode.com/github/LarryHsiao/clotho)](https://hitsofcode.com/view/github/LarryHsiao/clotho)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
-
-
-@todo #0 Unit tests failed on JDK 11 

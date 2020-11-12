@@ -1,0 +1,20 @@
+package com.larryhsiao.clotho.utility
+
+import com.larryhsiao.clotho.Source
+import java.nio.ByteBuffer
+import java.nio.ByteOrder
+import java.util.*
+
+/**
+ * Order uuid bytes with little endianess
+ */
+class RevertedUUID(private val input: UUID) : Source<UUID> {
+    override fun value(): UUID {
+        val buffer = ByteBuffer.allocate(16)
+        buffer.putLong(input.leastSignificantBits)
+        buffer.putLong(input.mostSignificantBits)
+        buffer.rewind()
+        buffer.order(ByteOrder.LITTLE_ENDIAN)
+        return UUID(buffer.long, buffer.long)
+    }
+}
