@@ -15,11 +15,15 @@ buildscript {
 plugins {
     id "org.jlleitschuh.gradle.ktlint" version "8.2.0"
     id "org.jetbrains.kotlin.jvm" version "1.4.10"
+    id "com.larryhsiao.thea" version "1.4.7"
 }
 
+System.out.println(thea.indicator.apply(""))
+
+def versionName = thea.version.version().versionName()
 apply plugin: 'java-library'
 
-def clothoVersion = "1.17.5"
+def clothoVersion = versionName
 
 repositories {
     mavenCentral()
