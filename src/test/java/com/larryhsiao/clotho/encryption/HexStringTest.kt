@@ -1,14 +1,15 @@
 package com.larryhsiao.clotho.encryption
 
+import com.larryhsiao.clotho.dgist.HexString
 import org.junit.Assert.assertEquals
 import org.junit.Test
 
 /**
- * Text for [HexString]
+ * Test for [HexString].
  */
 class HexStringTest {
-    /***
-     * CHeck the hex result.
+    /**
+     * Check the hex result.
      */
     @Test
     fun simple() {

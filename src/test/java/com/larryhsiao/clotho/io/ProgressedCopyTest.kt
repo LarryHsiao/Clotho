@@ -1,6 +1,6 @@
 package com.larryhsiao.clotho.io
 
-import com.larryhsiao.clotho.encryption.MD5
+import com.larryhsiao.clotho.dgist.MD5
 import org.junit.Assert.assertEquals
 import org.junit.Test
 import java.io.ByteArrayInputStream

@@ -1,6 +1,7 @@
 package com.larryhsiao.clotho.encryption
 
 import com.larryhsiao.clotho.Source
+import com.larryhsiao.clotho.dgist.HexString
 import org.junit.Assert
 import org.junit.Test
 
