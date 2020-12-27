@@ -1,4 +1,4 @@
-package com.larryhsiao.clotho.encryption
+package com.larryhsiao.clotho.dgist
 
 import com.larryhsiao.clotho.Source
 import java.io.IOException
