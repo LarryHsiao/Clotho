@@ -1,11 +1,11 @@
-package com.larryhsiao.clotho
+package com.larryhsiao.clotho;
 
 /**
  * Builder class with Type <T>.
  */
-interface Source<T> {
+public interface Source<T> {
     /**
      * Fetch the data
      */
-    fun value(): T
+    T value();
 }

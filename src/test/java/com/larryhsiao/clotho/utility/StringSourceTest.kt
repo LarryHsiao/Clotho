@@ -1,6 +1,5 @@
-package com.larryhsiao.clotho
+package com.larryhsiao.clotho.utility
 
-import com.larryhsiao.clotho.utility.StringSource
 import org.junit.Assert.assertEquals
 import org.junit.Test
 

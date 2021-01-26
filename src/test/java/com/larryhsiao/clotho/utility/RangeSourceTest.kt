@@ -1,4 +1,4 @@
-package com.larryhsiao.clotho.algorithm
+package com.larryhsiao.clotho.utility
 
 import com.larryhsiao.clotho.source.ConstSource
 import org.junit.Assert.assertEquals

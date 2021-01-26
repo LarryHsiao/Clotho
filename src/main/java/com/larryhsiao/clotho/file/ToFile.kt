@@ -1,6 +1,5 @@
 package com.larryhsiao.clotho.file
 
-import com.larryhsiao.clotho.Action
 import com.larryhsiao.clotho.io.ProgressedCopy
 import java.io.File
 import java.io.FileInputStream

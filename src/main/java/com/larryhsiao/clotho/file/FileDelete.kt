@@ -1,6 +1,5 @@
 package com.larryhsiao.clotho.file
 
-import com.larryhsiao.clotho.Action
 import java.io.File
 
 /**

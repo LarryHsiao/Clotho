@@ -1,11 +1,12 @@
-package com.larryhsiao.clotho
+package com.larryhsiao.clotho.source
 
+import com.larryhsiao.clotho.source.SourceWrapper
 import com.larryhsiao.clotho.utility.StringSource
 import org.junit.Assert.assertEquals
 import org.junit.Test
 
 /**
- * Tests for [com.larryhsiao.clotho.SourceWrapper]
+ * Tests for [com.larryhsiao.clotho.source.SourceWrapper]
  */
 class SourceWrapperTest {
     /**
