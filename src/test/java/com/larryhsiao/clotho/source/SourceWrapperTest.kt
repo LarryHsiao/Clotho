@@ -1,7 +1,5 @@
 package com.larryhsiao.clotho.source
 
-import com.larryhsiao.clotho.source.SourceWrapper
-import com.larryhsiao.clotho.utility.StringSource
 import org.junit.Assert.assertEquals
 import org.junit.Test
 
@@ -17,7 +15,7 @@ class SourceWrapperTest {
         assertEquals(
             "VALUE",
             SourceWrapper(
-                StringSource("VALUE")
+                ConstSource("VALUE")
             ).value()
         )
     }

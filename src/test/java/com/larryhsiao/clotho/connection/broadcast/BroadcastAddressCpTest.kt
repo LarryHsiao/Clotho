@@ -11,7 +11,7 @@ class BroadcastAddressCpTest {
     fun simple() {
         BroadcastAddressCp().value().run {
             forEach {
-                System.out.println("""
+                println("""
                    ${it.name()}
                    ${it.interfaceInetAddress()}
                """.trimIndent())

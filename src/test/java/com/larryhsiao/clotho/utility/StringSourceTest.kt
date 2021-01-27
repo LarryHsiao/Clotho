@@ -1,5 +1,6 @@
 package com.larryhsiao.clotho.utility
 
+import com.larryhsiao.clotho.source.ConstSource
 import org.junit.Assert.assertEquals
 import org.junit.Test
 
@@ -9,7 +10,7 @@ class StringSourceTest {
         with("Actual") {
             assertEquals(
                 "Actual",
-                StringSource(this).value()
+                ConstSource(this).value()
             )
         }
     }
