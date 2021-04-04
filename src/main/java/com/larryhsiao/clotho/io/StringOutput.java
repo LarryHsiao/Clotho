@@ -11,7 +11,6 @@ import java.io.OutputStream;
  * Action to output given String to {@link OutputStream}.
  */
 public class StringOutput implements Action {
-    private final byte[] buffer = new byte[1024];
     private final String content;
     private final OutputStream stream;
 
@@ -25,6 +24,7 @@ public class StringOutput implements Action {
         new ProgressedCopy(
             new ByteArrayInputStream(content.getBytes()),
             stream,
+            1024 * 1024 * 4,
             integer -> null
         ).value();
     }

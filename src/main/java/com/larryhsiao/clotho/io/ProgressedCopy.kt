@@ -6,16 +6,15 @@ import java.io.OutputStream
 
 /**
  * Copy input stream to output stream.
- *
- * @todo #performance Improve performance.
  */
 class ProgressedCopy(
     private val input: InputStream,
     private val output: OutputStream,
+    private val bufferSize: Int,
     private val progress: (copied: Int) -> Unit
 ) : Source<Unit> {
     override fun value() {
-        val buffer = ByteArray(1024*100)
+        val buffer = ByteArray(bufferSize)
         var readed = input.read(buffer)
         var totalLength = 0
         while (readed != -1) {
