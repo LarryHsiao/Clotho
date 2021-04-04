@@ -31,7 +31,8 @@ class ProgressedCopyTest {
                 override fun write(b: Int) {
                     // leave it empty
                 }
-            }
+            },
+            1024 * 1024 * 4
         ) { copiedLength = it }.value()
 
         assertEquals(
@@ -49,7 +50,8 @@ class ProgressedCopyTest {
         val output = ByteArrayOutputStream(input.toByteArray().size)
         ProgressedCopy(
             input.byteInputStream(),
-            output
+            output,
+            1024 * 1024 * 4
         ) {}.value()
 
         assertEquals(
@@ -70,7 +72,8 @@ class ProgressedCopyTest {
         val output = ByteArrayOutputStream(input.size)
         ProgressedCopy(
             ByteArrayInputStream(input),
-            output
+            output,
+            1024 * 1024 * 4
         ) {}.value()
 
         assertEquals(

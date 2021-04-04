@@ -71,23 +71,6 @@ class CurrencyNumberTest {
         )
     }
 
-    /**
-     * For AED in ar_AE.
-     *
-     * @todo #currency-0 Make sure the numbers is in use in real world
-     */
-    @Test
-    fun aed_arAE() {
-        assertEquals(
-            "د.إ.\u200F ١٬٠٠٠٫٠٠",
-            CurrencyNumber(
-                BigDecimal.valueOf(1000),
-                Currency.getInstance("AED"),
-                Locale("ar", "AE")
-            ).value()
-        )
-    }
-
     @Test
     fun usd_french() {
         assertEquals(

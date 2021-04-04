@@ -32,7 +32,8 @@ class ToFile(
     override fun fire() {
         ProgressedCopy(
             input,
-            FileOutputStream(dst)
+            FileOutputStream(dst),
+            1024 * 1024 * 4
         ) { progress(it) }.value()
     }
 }
