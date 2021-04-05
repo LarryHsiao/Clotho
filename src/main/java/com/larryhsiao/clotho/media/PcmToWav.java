@@ -12,7 +12,7 @@ import java.nio.ByteBuffer;
 import static java.nio.ByteOrder.LITTLE_ENDIAN;
 
 /**
- * Action to convert PCM　raw audio file into playable Wave file.
+ * Action to convert PCM raw audio file into playable Wave file.
  * <p>
  * Fixed parameters which suit for most case.
  * Sample Rate:44100
