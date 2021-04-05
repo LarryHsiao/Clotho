@@ -1,9 +1,7 @@
 buildscript {
     ext.kotlin_version = '1.4.10'
     repositories {
-        mavenCentral()
-        jcenter()
-        maven { url = 'http://172.104.79.181:81/repository/Elizabeth/' }
+        maven { url = 'https://larryhsiao.com:11000/repository/maven-public/' }
     }
     dependencies {
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
@@ -26,7 +24,7 @@ apply plugin: 'java-library'
 def clothoVersion = versionName
 
 repositories {
-    mavenCentral()
+    maven { url = 'https://larryhsiao.com:11000/repository/maven-public/' }
 }
 
 dependencies {
@@ -64,29 +62,6 @@ jacocoTestReport {
     }
 }
 
-apply plugin: 'com.jfrog.bintray'
-bintray {
-    user = 'larryhsiao'
-    key = System.getenv('BINTRAY_KEY')
-    publications = ['release']
-    publish = true
-    override = true
-    pkg {
-        repo = 'Elizabeth'
-        name = 'Clotho'
-        userOrg = 'larryhsiao'
-        licenses = ['MIT']
-        vcsUrl = 'https://github.com/LarryHsiao/Clotho.git'
-        version {
-            name = clothoVersion
-            gpg {
-                sign = true
-                passphrase = System.getenv('BINTRAY_PASSPHRASE')
-            }
-        }
-    }
-}
-
 task sourcesJar(type: Jar) {
     from sourceSets.main.allSource
     classifier = 'sources'
@@ -100,13 +75,22 @@ task javadocJar(type: Jar) {
 apply plugin: 'maven-publish'
 publishing {
     publications {
-        release(MavenPublication) {
-            from components.java
+        maven(MavenPublication) {
             artifact sourcesJar
             artifact javadocJar
             groupId 'com.larryhsiao'
             artifactId 'clotho'
             version clothoVersion
+            from components.java
+        }
+    }
+    repositories {
+        maven {
+            url = 'https://larryhsiao.com:11000/repository/Elizabeth/'
+            credentials {
+                username(System.getenv("NEXUS_USER_NAME"))
+                password(System.getenv("NEXUS_PASSWORD"))
+            }
         }
     }
 }
