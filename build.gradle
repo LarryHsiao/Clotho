@@ -11,12 +11,12 @@ buildscript {
 plugins {
     id "org.jlleitschuh.gradle.ktlint" version "8.2.0"
     id "org.jetbrains.kotlin.jvm" version "1.4.10"
-    id "com.larryhsiao.thea" version "1.4.7"
+    id "com.larryhsiao.thea" version "1.5.0"
 }
 
-System.out.println(thea.indicator.apply(""))
+System.out.println(thea.versionIndicator())
 
-def versionName = thea.version.version().versionName()
+def versionName = thea.version().versionName()
 apply plugin: 'java-library'
 
 def clothoVersion = versionName
@@ -24,7 +24,9 @@ def clothoVersion = versionName
 repositories {
     maven { url = 'https://larryhsiao.com:11000/repository/maven-public/' }
 }
-
+test {
+    useJUnitPlatform()
+}
 dependencies {
     testCompile 'junit:junit:4.12'
     compileOnly 'com.google.code.gson:gson:2.8.6'
