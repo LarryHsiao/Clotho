@@ -1,6 +1,5 @@
-package com.larryhsiao.clotho.utility.comparator
+package com.larryhsiao.clotho.comparator
 
-import com.larryhsiao.clotho.comparator.StringComparator
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
