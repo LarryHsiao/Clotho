@@ -1,14 +1,17 @@
-package com.larryhsiao.clotho.utility.color
+package com.larryhsiao.clotho.color
 
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
-class RedIntTest {
+/**
+ * Test for [GreenInt]
+ */
+class GreenIntTest {
     @Test
     fun simple() {
         assertEquals(
             160,
-            RedInt(0xA0FFFF).value()
+            GreenInt(0xFFA0FF).value()
         )
     }
 }

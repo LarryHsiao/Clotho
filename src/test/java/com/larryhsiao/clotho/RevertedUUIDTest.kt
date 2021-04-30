@@ -1,6 +1,5 @@
-package com.larryhsiao.clotho.utility
+package com.larryhsiao.clotho
 
-import com.larryhsiao.clotho.RevertedUUID
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 import java.util.*

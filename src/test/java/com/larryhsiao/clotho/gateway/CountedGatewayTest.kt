@@ -1,4 +1,4 @@
-package com.larryhsiao.clotho.utility.gateway
+package com.larryhsiao.clotho.gateway
 
 import com.larryhsiao.clotho.database.SingleConn
 import com.larryhsiao.clotho.database.sqlite.MemorySQLiteConn

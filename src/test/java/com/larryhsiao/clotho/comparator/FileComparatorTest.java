@@ -1,6 +1,5 @@
-package com.larryhsiao.clotho.utility.comparator;
+package com.larryhsiao.clotho.comparator;
 
-import com.larryhsiao.clotho.comparator.FileComparator;
 import org.junit.jupiter.api.Test;
 
 import java.io.File;

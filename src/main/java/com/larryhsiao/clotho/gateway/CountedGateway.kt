@@ -1,4 +1,4 @@
-package com.larryhsiao.clotho.utility.gateway
+package com.larryhsiao.clotho.gateway
 
 import com.larryhsiao.clotho.Source
 import com.larryhsiao.clotho.storage.Ceres

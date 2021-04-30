@@ -1,4 +1,4 @@
-package com.larryhsiao.clotho.utility.color
+package com.larryhsiao.clotho.color
 
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test

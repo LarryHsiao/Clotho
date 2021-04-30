@@ -1,4 +1,4 @@
-package com.larryhsiao.clotho.utility.color
+package com.larryhsiao.clotho.color
 
 import com.larryhsiao.clotho.Source
 
