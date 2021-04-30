@@ -2,8 +2,8 @@ package com.larryhsiao.clotho.media
 
 import com.larryhsiao.clotho.file.FileBytes
 import com.larryhsiao.clotho.file.TextFile
-import org.junit.Assert.assertEquals
-import org.junit.Test
+import org.junit.jupiter.api.Assertions.assertEquals
+import org.junit.jupiter.api.Test
 import java.io.File
 
 /**

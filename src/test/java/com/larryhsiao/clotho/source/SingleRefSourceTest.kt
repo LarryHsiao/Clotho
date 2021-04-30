@@ -1,8 +1,7 @@
 package com.larryhsiao.clotho.source
 
-import com.larryhsiao.clotho.Source
-import org.junit.Assert
-import org.junit.Test
+import org.junit.jupiter.api.Assertions
+import org.junit.jupiter.api.Test
 
 /**
  * Unit-test for the class [SingleRefSource]
@@ -15,21 +14,15 @@ class SingleRefSourceTest {
     @Test
     fun reference() {
         var ref: Any? = null
-        val source = SingleRefSource(
-            object : Source<Any> {
-                override fun value(): Any {
-                    return SingleRefSourceTest()
-                }
-            }
-        )
+        val source = SingleRefSource { SingleRefSourceTest() }
         for (i in 0..10) {
             val newRef = source.value()
             if (ref != null && ref != newRef) {
-                Assert.fail("Reference changed")
+                Assertions.fail("Reference changed")
             } else {
                 ref = newRef
             }
         }
-        Assert.assertTrue(true)
+        Assertions.assertTrue(true)
     }
 }

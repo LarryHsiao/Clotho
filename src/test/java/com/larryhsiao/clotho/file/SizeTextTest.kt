@@ -1,8 +1,8 @@
 package com.larryhsiao.clotho.file
 
 import com.larryhsiao.clotho.source.ConstSource
-import org.junit.Assert.assertEquals
-import org.junit.Test
+import org.junit.jupiter.api.Assertions.assertEquals
+import org.junit.jupiter.api.Test
 
 /**
  * Test for [SizeText]

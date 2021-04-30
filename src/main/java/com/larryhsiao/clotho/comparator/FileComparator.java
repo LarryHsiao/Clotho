@@ -1,4 +1,4 @@
-package com.larryhsiao.clotho.utility.comparator;
+package com.larryhsiao.clotho.comparator;
 
 import java.io.File;
 import java.util.Comparator;

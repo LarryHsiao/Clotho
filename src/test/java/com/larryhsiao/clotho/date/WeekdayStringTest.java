@@ -1,14 +1,14 @@
 package com.larryhsiao.clotho.date;
 
-import org.junit.Ignore;
-import org.junit.Test;
+
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 import java.text.SimpleDateFormat;
-import java.util.Locale;
 
 import static java.util.Locale.ENGLISH;
 import static java.util.Locale.TAIWAN;
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Test for {@link WeekdayString}.
@@ -33,7 +33,7 @@ public class WeekdayStringTest {
      * Normal case in Taiwan.
      */
     @Test
-    @Ignore
+    @Disabled
     public void weekdayIndicatorTaiwan() throws Exception {
         assertEquals(
            "週二",

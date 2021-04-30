@@ -1,7 +1,7 @@
 package com.larryhsiao.clotho.time;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 /**
  * Test for {@link CurrentTimeSource}.
@@ -12,7 +12,7 @@ public class CurrentTimeSourceTest {
      */
     @Test
     public void resultIsRecent() {
-        Assert.assertEquals(
+        Assertions.assertEquals(
             Double.valueOf(System.currentTimeMillis()),
             new CurrentTimeSource().value(),
            5000

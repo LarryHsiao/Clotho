@@ -1,10 +1,7 @@
 package com.larryhsiao.clotho.date;
 
-import org.junit.Assert;
-import org.junit.Test;
-
-import java.util.Calendar;
-import java.util.Locale;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 /**
  * Test for {@link JdkWeekdays}.
@@ -15,7 +12,7 @@ public class CalendarWeekdaysTest {
      */
     @Test
     public void dayCount() {
-        Assert.assertEquals(
+        Assertions.assertEquals(
             7,
             new JdkWeekdays().days().length
         );
@@ -27,12 +24,12 @@ public class CalendarWeekdaysTest {
     @Test
     public void dayNameInEnglish() {
         final Weekday[] days = new JdkWeekdays().days();
-        Assert.assertEquals("Mon", days[0].name());
-        Assert.assertEquals("Tue", days[1].name());
-        Assert.assertEquals("Wed", days[2].name());
-        Assert.assertEquals("Thu", days[3].name());
-        Assert.assertEquals("Fri", days[4].name());
-        Assert.assertEquals("Sat", days[5].name());
-        Assert.assertEquals("Sun", days[6].name());
+        Assertions.assertEquals("Mon", days[0].name());
+        Assertions.assertEquals("Tue", days[1].name());
+        Assertions.assertEquals("Wed", days[2].name());
+        Assertions.assertEquals("Thu", days[3].name());
+        Assertions.assertEquals("Fri", days[4].name());
+        Assertions.assertEquals("Sat", days[5].name());
+        Assertions.assertEquals("Sun", days[6].name());
     }
 }

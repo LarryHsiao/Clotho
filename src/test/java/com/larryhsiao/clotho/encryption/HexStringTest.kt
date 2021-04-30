@@ -1,8 +1,8 @@
 package com.larryhsiao.clotho.encryption
 
 import com.larryhsiao.clotho.dgist.HexString
-import org.junit.Assert.assertEquals
-import org.junit.Test
+import org.junit.jupiter.api.Assertions.assertEquals
+import org.junit.jupiter.api.Test
 
 /**
  * Test for [HexString].

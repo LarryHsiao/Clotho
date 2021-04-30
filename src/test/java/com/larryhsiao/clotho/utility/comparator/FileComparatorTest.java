@@ -1,12 +1,12 @@
 package com.larryhsiao.clotho.utility.comparator;
 
-import org.junit.Test;
+import com.larryhsiao.clotho.comparator.FileComparator;
+import org.junit.jupiter.api.Test;
 
 import java.io.File;
 import java.nio.file.Files;
-import java.util.Comparator;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Unit-test for the class {@link FileComparator}
@@ -26,11 +26,6 @@ public class FileComparatorTest {
         assertEquals(1, new FileComparator().compare(file, dir));
         assertEquals(0, new FileComparator().compare(file, file2));
         assertEquals(0, new FileComparator().compare(dir, dir2));
-        assertEquals(0, new FileComparator(new Comparator<File>() {
-            @Override
-            public int compare(File o1, File o2) {
-                return 0;
-            }
-        }).compare(dir, dir2));
+        assertEquals(0, new FileComparator((o1, o2) -> 0).compare(dir, dir2));
     }
 }

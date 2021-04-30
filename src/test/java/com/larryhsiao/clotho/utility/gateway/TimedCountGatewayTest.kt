@@ -4,8 +4,8 @@ import com.larryhsiao.clotho.database.SingleConn
 import com.larryhsiao.clotho.database.sqlite.MemorySQLiteConn
 import com.larryhsiao.clotho.source.ConstSource
 import com.larryhsiao.clotho.storage.DbCeres
-import org.junit.Assert.*
-import org.junit.Test
+import org.junit.jupiter.api.Assertions.*
+import org.junit.jupiter.api.Test
 
 /**
  * Test for [TimedCountGateway]

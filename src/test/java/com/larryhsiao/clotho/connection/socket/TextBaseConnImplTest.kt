@@ -1,7 +1,7 @@
 package com.larryhsiao.clotho.connection.socket
 
-import org.junit.Assert
-import org.junit.Test
+import org.junit.jupiter.api.Assertions
+import org.junit.jupiter.api.Test
 import java.io.ByteArrayOutputStream
 
 /**
@@ -26,7 +26,7 @@ class TextBaseConnImplTest {
             close()
         }
 
-        Assert.assertEquals(
+        Assertions.assertEquals(
             inputString,
             outputStream.toString()
         )
@@ -49,7 +49,7 @@ class TextBaseConnImplTest {
             close()
         }
 
-        Assert.assertEquals(
+        Assertions.assertEquals(
             inputString,
             outputStream.toString()
         )

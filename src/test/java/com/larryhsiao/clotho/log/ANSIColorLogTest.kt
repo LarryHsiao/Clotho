@@ -1,8 +1,8 @@
 package com.larryhsiao.clotho.log
 
-import org.junit.Assert.assertEquals
-import org.junit.Assert.fail
-import org.junit.Test
+import org.junit.jupiter.api.Assertions.assertEquals
+import org.junit.jupiter.api.Assertions.fail
+import org.junit.jupiter.api.Test
 
 /**
  * Test for ANSIColorLog
@@ -15,7 +15,7 @@ class ANSIColorLogTest {
     fun info() {
         ANSIColorLog(object : Log {
             override fun warning(p0: String?) {
-                fail()
+                fail<Unit>()
             }
 
             override fun info(p0: String?) {
@@ -23,11 +23,11 @@ class ANSIColorLogTest {
             }
 
             override fun error(p0: String?) {
-                fail()
+                fail<Unit>()
             }
 
             override fun debug(p0: String?) {
-                fail()
+                fail<Unit>()
             }
         }).info("")
     }
@@ -43,15 +43,15 @@ class ANSIColorLogTest {
             }
 
             override fun info(p0: String?) {
-                fail()
+                fail<Unit>()
             }
 
             override fun error(p0: String?) {
-                fail()
+                fail<Unit>()
             }
 
             override fun debug(p0: String?) {
-                fail()
+                fail<Unit>()
             }
         }).warning("")
     }
@@ -63,11 +63,11 @@ class ANSIColorLogTest {
     fun error() {
         ANSIColorLog(object : Log {
             override fun warning(p0: String?) {
-                fail()
+                fail<Unit>()
             }
 
             override fun info(p0: String?) {
-                fail()
+                fail<Unit>()
             }
 
             override fun error(p0: String?) {
@@ -75,7 +75,7 @@ class ANSIColorLogTest {
             }
 
             override fun debug(p0: String?) {
-                fail()
+                fail<Unit>()
             }
         }).error("")
     }
@@ -87,15 +87,15 @@ class ANSIColorLogTest {
     fun debug() {
         ANSIColorLog(object : Log {
             override fun warning(p0: String?) {
-                fail()
+                fail<Unit>()
             }
 
             override fun info(p0: String?) {
-                fail()
+                fail<Unit>()
             }
 
             override fun error(p0: String?) {
-                fail()
+                fail<Unit>()
             }
 
             override fun debug(p0: String?) {

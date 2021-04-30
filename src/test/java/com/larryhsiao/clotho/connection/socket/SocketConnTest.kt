@@ -1,7 +1,7 @@
 package com.larryhsiao.clotho.connection.socket
 
-import org.junit.Assert
-import org.junit.Test
+import org.junit.jupiter.api.Assertions
+import org.junit.jupiter.api.Test
 import java.net.InetAddress
 import java.net.InetSocketAddress
 import java.net.ServerSocket
@@ -37,7 +37,7 @@ class SocketConnTest {
             Thread.sleep(150)
             it.send(inputString)
             Thread.sleep(150)
-            Assert.assertEquals(
+            Assertions.assertEquals(
                 inputString,
                 outputString
             )

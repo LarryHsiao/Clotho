@@ -1,7 +1,7 @@
 package com.larryhsiao.clotho.database.sqlite
 
-import org.junit.Assert
-import org.junit.Test
+import org.junit.jupiter.api.Assertions
+import org.junit.jupiter.api.Test
 
 /**
  * Test for [MemorySQLiteConn]
@@ -13,7 +13,7 @@ class MemorySQLiteConnTest {
     @Test
     fun noFileExist() {
         MemorySQLiteConn().value().use {
-            Assert.assertTrue(it.isValid(0))
+            Assertions.assertTrue(it.isValid(0))
         }
     }
 }

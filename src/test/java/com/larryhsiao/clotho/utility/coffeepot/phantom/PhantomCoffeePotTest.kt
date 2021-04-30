@@ -1,7 +1,7 @@
 package com.larryhsiao.clotho.utility.coffeepot.phantom
 
-import org.junit.Assert.assertEquals
-import org.junit.Test
+import org.junit.jupiter.api.Assertions.assertEquals
+import org.junit.jupiter.api.Test
 import java.util.concurrent.CountDownLatch
 
 class PhantomCoffeePotTest {

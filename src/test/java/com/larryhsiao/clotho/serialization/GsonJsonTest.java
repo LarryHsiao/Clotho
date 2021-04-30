@@ -1,7 +1,8 @@
 package com.larryhsiao.clotho.serialization;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+;
 
 /**
  * Test for {@link GsonJson}.
@@ -22,7 +23,7 @@ public class GsonJsonTest {
      */
     @Test
     public void serialization() {
-        Assert.assertEquals(
+        Assertions.assertEquals(
             "{\"field1\":\"field1\",\"field2\":\"field2\"}",
             new GsonJson().serialize(new Target("field1", "field2"), Target.class)
         );
@@ -33,7 +34,7 @@ public class GsonJsonTest {
      */
     @Test
     public void deserialization() {
-        Assert.assertEquals(
+        Assertions.assertEquals(
             "field1",
             new GsonJson().deserialize(
                 "{\"field1\":\"field1\",\"field2\":\"field2\"}",

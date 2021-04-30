@@ -1,11 +1,12 @@
 package com.larryhsiao.clotho.database.h2
 
 import com.larryhsiao.clotho.source.ConstSource
-import org.junit.After
-import org.junit.Assert.assertTrue
-import org.junit.Assert.fail
-import org.junit.Before
-import org.junit.Test
+import org.junit.jupiter.api.AfterEach
+import org.junit.jupiter.api.Assertions.assertTrue
+import org.junit.jupiter.api.Assertions.fail
+import org.junit.jupiter.api.BeforeEach
+import org.junit.jupiter.api.Test
+
 import java.io.File
 
 /**
@@ -19,7 +20,7 @@ class EmbedConnTest {
     /**
      * Delete db file before setup
      */
-    @Before
+    @BeforeEach
     fun setUp() {
         File(DB_FILE_NAME).delete()
     }
@@ -27,7 +28,7 @@ class EmbedConnTest {
     /**
      * Delete db file after the test
      */
-    @After
+    @AfterEach
     fun tearDown() {
         File(DB_FILE_NAME).delete()
     }

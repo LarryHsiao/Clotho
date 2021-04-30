@@ -1,7 +1,7 @@
 package com.larryhsiao.clotho.file;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 import java.io.File;
 import java.io.IOException;
@@ -18,7 +18,7 @@ public class FileMimeTypeTest {
     @Test
     public void nameJpeg() throws IOException {
         File file = Files.createTempFile("temp", ".jpeg").toFile();
-        Assert.assertEquals(
+        Assertions.assertEquals(
             "image/jpeg",
             new FileMimeType(file).value()
         );
@@ -30,7 +30,7 @@ public class FileMimeTypeTest {
     @Test
     public void nameJpg() throws IOException {
         File file = Files.createTempFile("temp", ".jpg").toFile();
-        Assert.assertEquals(
+        Assertions.assertEquals(
             "image/jpeg",
             new FileMimeType(file).value()
         );
@@ -42,7 +42,7 @@ public class FileMimeTypeTest {
     @Test
     public void nameMp4() throws IOException {
         File file = Files.createTempFile("temp", ".mp4").toFile();
-        Assert.assertEquals(
+        Assertions.assertEquals(
             "video/mp4",
             new FileMimeType(file).value()
         );
@@ -59,7 +59,7 @@ public class FileMimeTypeTest {
             new File("src/test/resources/lena_color.gif").toPath(),
             file.toPath()
         );
-        Assert.assertEquals("image/gif", new FileMimeType(file).value());
+        Assertions.assertEquals("image/gif", new FileMimeType(file).value());
     }
 
     /**
@@ -73,8 +73,8 @@ public class FileMimeTypeTest {
             new File("src/test/resources/small.3gp").toPath(),
             file.toPath()
         );
-//        Assert.assertEquals("video/3gpp", new FileMimeType(file).value());
-        Assert.assertEquals("content/unknown", new FileMimeType(file).value());
+//        Assertions.assertEquals("video/3gpp", new FileMimeType(file).value());
+        Assertions.assertEquals("content/unknown", new FileMimeType(file).value());
     }
 
     /**
@@ -88,8 +88,8 @@ public class FileMimeTypeTest {
             new File("src/test/resources/small.mp4").toPath(),
             file.toPath()
         );
-//        Assert.assertEquals("video/mp4", new FileMimeType(file).value());
-        Assert.assertEquals("content/unknown", new FileMimeType(file).value());
+//        Assertions.assertEquals("video/mp4", new FileMimeType(file).value());
+        Assertions.assertEquals("content/unknown", new FileMimeType(file).value());
     }
 
     /**
@@ -100,7 +100,7 @@ public class FileMimeTypeTest {
         try {
            new FileMimeType(new File("FILE_NOT_EXIST")).value();
         } catch (Exception e) {
-            Assert.assertTrue(true);
+            Assertions.assertTrue(true);
         }
     }
 }
