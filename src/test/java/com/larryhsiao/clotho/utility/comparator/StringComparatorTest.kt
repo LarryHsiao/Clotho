@@ -1,7 +1,8 @@
 package com.larryhsiao.clotho.utility.comparator
 
-import org.junit.Assert.assertEquals
-import org.junit.Test
+import com.larryhsiao.clotho.comparator.StringComparator
+import org.junit.jupiter.api.Assertions.assertEquals
+import org.junit.jupiter.api.Test
 
 /**
  * Test for [StringComparator]

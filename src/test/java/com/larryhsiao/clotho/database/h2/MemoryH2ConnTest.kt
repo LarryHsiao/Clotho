@@ -1,7 +1,7 @@
 package com.larryhsiao.clotho.database.h2
 
-import org.junit.Assert
-import org.junit.Test
+import org.junit.jupiter.api.Assertions
+import org.junit.jupiter.api.Test
 
 /**
  * Test for [MemoryH2Conn]
@@ -13,7 +13,7 @@ class MemoryH2ConnTest {
     @Test
     fun noFileExist() {
         MemoryH2Conn().value().use {
-            Assert.assertTrue(it.isValid(0))
+            Assertions.assertTrue(it.isValid(0))
         }
     }
 
@@ -24,11 +24,11 @@ class MemoryH2ConnTest {
     fun exception() {
         try {
             MemoryH2Conn(";;::").value().use {
-                Assert.assertTrue(it.isValid(0))
+                Assertions.assertTrue(it.isValid(0))
             }
-            Assert.fail()
+            Assertions.fail()
         } catch (e: IllegalArgumentException) {
-            Assert.assertTrue(true)
+            Assertions.assertTrue(true)
         }
     }
 }

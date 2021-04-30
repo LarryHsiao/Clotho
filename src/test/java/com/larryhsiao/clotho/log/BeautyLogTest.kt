@@ -1,6 +1,6 @@
 package com.larryhsiao.clotho.log
 
-import org.junit.Test
+import org.junit.jupiter.api.Test
 
 class BeautyLogTest {
     @Test

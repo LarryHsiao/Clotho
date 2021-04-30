@@ -1,6 +1,4 @@
-package com.larryhsiao.clotho.utility
-
-import com.larryhsiao.clotho.Source
+package com.larryhsiao.clotho
 
 /**
  * Source to find the Range (largest and smallest) value which wrapped in object.

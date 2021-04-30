@@ -1,7 +1,8 @@
 package com.larryhsiao.clotho.io;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+;
 
 import java.io.ByteArrayOutputStream;
 
@@ -17,6 +18,6 @@ public class StringOutputTest {
     public void checkOutput() {
         ByteArrayOutputStream output = new ByteArrayOutputStream();
         new StringOutput("Content", output).fire();
-        Assert.assertEquals("Content", new String(output.toByteArray()));
+        Assertions.assertEquals("Content", new String(output.toByteArray()));
     }
 }

@@ -1,9 +1,9 @@
 package com.larryhsiao.clotho.connection
 
 import com.larryhsiao.clotho.regex.IsIPv4
-import org.junit.Assert.assertNotEquals
-import org.junit.Assert.assertTrue
-import org.junit.Test
+import org.junit.jupiter.api.Assertions.assertNotEquals
+import org.junit.jupiter.api.Assertions.assertTrue
+import org.junit.jupiter.api.Test
 
 /**
  * Tests for [com.larryhsiao.clotho.connection.IPv4Mapping]

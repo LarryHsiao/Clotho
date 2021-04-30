@@ -1,8 +1,9 @@
 package com.larryhsiao.clotho.connection.broadcast
 
 import com.larryhsiao.clotho.source.ConstSource
-import org.junit.Assert
-import org.junit.Test
+import org.junit.jupiter.api.Assertions
+import org.junit.jupiter.api.Test
+
 import java.net.DatagramPacket
 import java.net.DatagramSocket
 import java.net.InetAddress
@@ -36,6 +37,6 @@ class BroadcastConnTest {
         conn.launch()
         countDownLatch.await(5, TimeUnit.SECONDS)
         conn.close()
-        Assert.assertTrue(String(packet.data, UTF_8).startsWith("ping"))
+        Assertions.assertTrue(String(packet.data, UTF_8).startsWith("ping"))
     }
 }

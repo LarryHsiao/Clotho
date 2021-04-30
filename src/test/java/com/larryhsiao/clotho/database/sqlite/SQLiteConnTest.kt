@@ -1,21 +1,21 @@
 package com.larryhsiao.clotho.database.sqlite
 
-import org.junit.After
-import org.junit.Assert.assertTrue
-import org.junit.Before
-import org.junit.Test
+import org.junit.jupiter.api.AfterEach
+import org.junit.jupiter.api.Assertions.assertTrue
+import org.junit.jupiter.api.BeforeEach
+import org.junit.jupiter.api.Test
 import java.io.File
 
 /**
  * Test for [SQLiteConn] object.
  */
 class SQLiteConnTest {
-    @Before
+    @BeforeEach
     fun setUp() {
         File("name").delete()
     }
 
-    @After
+    @AfterEach
     fun tearDown() {
         File("name").delete()
     }

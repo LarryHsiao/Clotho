@@ -2,8 +2,8 @@ package com.larryhsiao.clotho.source
 
 import com.larryhsiao.clotho.Source
 import com.larryhsiao.clotho.storage.MemoryCeres
-import org.junit.Assert.assertEquals
-import org.junit.Test
+import org.junit.jupiter.api.Assertions.assertEquals
+import org.junit.jupiter.api.Test
 
 /**
  * Test for [com.larryhsiao.clotho.source.CachedSource]

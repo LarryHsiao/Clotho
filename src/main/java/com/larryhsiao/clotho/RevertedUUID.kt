@@ -1,6 +1,5 @@
-package com.larryhsiao.clotho.utility
+package com.larryhsiao.clotho
 
-import com.larryhsiao.clotho.Source
 import java.nio.ByteBuffer
 import java.nio.ByteOrder
 import java.util.*

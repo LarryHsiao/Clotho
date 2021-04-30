@@ -1,7 +1,6 @@
 package com.larryhsiao.clotho.date
 
-import org.junit.Assert.assertEquals
-import org.junit.Test
+import org.junit.jupiter.api.Assertions.assertEquals
 import java.util.Calendar.*
 
 /**
@@ -12,7 +11,6 @@ class DateCalendarTest {
     /**
      * Check result
      */
-    @Test
     fun simple() {
         DateCalendar(
             0,

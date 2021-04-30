@@ -1,7 +1,8 @@
 package com.larryhsiao.clotho.stream
 
-import org.junit.Assert
-import org.junit.Test
+import org.junit.jupiter.api.Assertions
+import org.junit.jupiter.api.Test
+
 import java.io.ByteArrayInputStream
 
 /**
@@ -13,7 +14,7 @@ internal class StreamStringTest {
      */
     @Test
     internal fun normalCase() {
-        Assert.assertEquals(
+        Assertions.assertEquals(
             "Test",
             StreamString(
                 ByteArrayInputStream("Test".toByteArray())

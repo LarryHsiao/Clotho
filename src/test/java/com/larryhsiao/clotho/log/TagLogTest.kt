@@ -1,8 +1,8 @@
 package com.larryhsiao.clotho.log
 
-import org.junit.Assert.assertEquals
-import org.junit.Assert.fail
-import org.junit.Test
+import org.junit.jupiter.api.Assertions.assertEquals
+import org.junit.jupiter.api.Assertions.fail
+import org.junit.jupiter.api.Test
 
 class TagLogTest {
     @Test
@@ -13,15 +13,15 @@ class TagLogTest {
             }
 
             override fun info(p0: String?) {
-                fail()
+                fail<Unit>()
             }
 
             override fun error(p0: String?) {
-                fail()
+                fail<Unit>()
             }
 
             override fun debug(p0: String?) {
-                fail()
+                fail<Unit>()
             }
         }).warning("")
     }
@@ -30,7 +30,7 @@ class TagLogTest {
     fun info() {
         TagLog(object : Log {
             override fun warning(p0: String?) {
-                fail()
+                fail<Unit>()
             }
 
             override fun info(p0: String?) {
@@ -38,11 +38,11 @@ class TagLogTest {
             }
 
             override fun error(p0: String?) {
-                fail()
+                fail<Unit>()
             }
 
             override fun debug(p0: String?) {
-                fail()
+                fail<Unit>()
             }
         }).info("")
     }
@@ -51,11 +51,11 @@ class TagLogTest {
     fun error() {
         TagLog(object : Log {
             override fun warning(p0: String?) {
-                fail()
+                fail<Unit>()
             }
 
             override fun info(p0: String?) {
-                fail()
+                fail<Unit>()
             }
 
             override fun error(p0: String?) {
@@ -63,7 +63,7 @@ class TagLogTest {
             }
 
             override fun debug(p0: String?) {
-                fail()
+                fail<Unit>()
             }
         }).error("")
     }
@@ -72,15 +72,15 @@ class TagLogTest {
     fun debug() {
         TagLog(object : Log {
             override fun warning(p0: String?) {
-                fail()
+                fail<Unit>()
             }
 
             override fun info(p0: String?) {
-                fail()
+                fail<Unit>()
             }
 
             override fun error(p0: String?) {
-                fail()
+                fail<Unit>()
             }
 
             override fun debug(p0: String?) {

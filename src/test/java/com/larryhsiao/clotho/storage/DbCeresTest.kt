@@ -2,8 +2,8 @@ package com.larryhsiao.clotho.storage
 
 import com.larryhsiao.clotho.database.SingleConn
 import com.larryhsiao.clotho.database.sqlite.MemorySQLiteConn
-import org.junit.Assert
-import org.junit.Test
+import org.junit.jupiter.api.Assertions
+import org.junit.jupiter.api.Test
 
 /**
  * Test for [DbCeres]
@@ -16,12 +16,12 @@ class DbCeresTest {
     fun simple() {
         DbCeres(SingleConn(MemorySQLiteConn())).also {
             it.store("Key1", "value")
-            Assert.assertEquals(
+            Assertions.assertEquals(
                 "value",
                 it.get("Key1")
             )
 
-            Assert.assertEquals(
+            Assertions.assertEquals(
                 "value",
                 it.all()["Key1"]
             )

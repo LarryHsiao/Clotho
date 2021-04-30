@@ -1,7 +1,8 @@
 package com.larryhsiao.clotho.file;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+;
 
 import java.io.File;
 import java.io.IOException;
@@ -17,7 +18,7 @@ public class ExtensionTest {
      */
     @Test
     public void simple() {
-        Assert.assertEquals("png", new Extension(new File("abc.png")).value());
+        Assertions.assertEquals("png", new Extension(new File("abc.png")).value());
     }
 
     /**
@@ -25,7 +26,7 @@ public class ExtensionTest {
      */
     @Test
     public void empty() {
-        Assert.assertEquals("", new Extension(new File("abc/baf")).value());
+        Assertions.assertEquals("", new Extension(new File("abc/baf")).value());
     }
 
     /**
@@ -33,7 +34,7 @@ public class ExtensionTest {
      */
     @Test
     public void directory() throws IOException {
-        Assert.assertEquals(
+        Assertions.assertEquals(
             "",
             new Extension(Files.createTempDirectory("").toFile()).value()
         );

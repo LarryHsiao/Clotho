@@ -1,7 +1,7 @@
 package com.larryhsiao.clotho.connection.broadcast
 
-import org.junit.Assert.assertTrue
-import org.junit.Test
+import org.junit.jupiter.api.Assertions.assertTrue
+import org.junit.jupiter.api.Test
 
 /**
  * Test for [BroadcastAddressCp]

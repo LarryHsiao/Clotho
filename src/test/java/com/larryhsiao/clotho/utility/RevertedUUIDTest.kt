@@ -1,7 +1,8 @@
 package com.larryhsiao.clotho.utility
 
-import org.junit.Assert.assertEquals
-import org.junit.Test
+import com.larryhsiao.clotho.RevertedUUID
+import org.junit.jupiter.api.Assertions.assertEquals
+import org.junit.jupiter.api.Test
 import java.util.*
 
 /**
