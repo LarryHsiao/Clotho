@@ -1,13 +1,9 @@
 version: '{build}'
 environment:
   matrix:
-    - JAVA_HOME: C:\Program Files (x86)\Java\jdk1.8.0
+    - JAVA_HOME: C:\Program Files\Java\jdk11
 branches:
   only:
     - master
 build_script:
   - gradlew build
-notifications:
-  - provider: Slack
-    incoming_webhook:
-      secure: anmm0VF/K2G8yJGLE+YuDCre7Xdxz6ayyycn3LtFdNb3qVps7CjskfG0vQ1//RRGwsV+dM2M5SYScQmMgJf4C+dFCPxNQ0Vfk/dFwx4OC0k=
