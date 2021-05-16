@@ -26,6 +26,6 @@ public class StringOutput implements Action {
             stream,
             1024 * 1024 * 4,
             integer -> null
-        ).value();
+        ).fire();
     }
 }

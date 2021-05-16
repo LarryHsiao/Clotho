@@ -33,7 +33,10 @@ class ProgressedCopyTest {
                 }
             },
             1024 * 1024 * 4
-        ) { copiedLength = it }.value()
+        ) {
+            copiedLength = it
+            null
+        }.fire()
 
         assertEquals(
             expectedLength,
@@ -52,7 +55,7 @@ class ProgressedCopyTest {
             input.byteInputStream(),
             output,
             1024 * 1024 * 4
-        ) {}.value()
+        ) { null }.fire()
 
         assertEquals(
             input,
@@ -74,7 +77,7 @@ class ProgressedCopyTest {
             ByteArrayInputStream(input),
             output,
             1024 * 1024 * 4
-        ) {}.value()
+        ) { null }.fire()
 
         assertEquals(
             MD5(ByteArrayInputStream(input)).value(),

@@ -34,6 +34,9 @@ class ToFile(
             input,
             FileOutputStream(dst),
             1024 * 1024 * 4
-        ) { progress(it) }.value()
+        ) {
+            progress(it)
+            null
+        }.fire()
     }
 }
