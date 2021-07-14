@@ -1,11 +1,10 @@
 package com.larryhsiao.clotho.io
 
 import com.larryhsiao.clotho.dgist.MD5
-import org.junit.jupiter.api.Assertions.assertEquals
+import org.junit.jupiter.api.Assertions
+import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.Test
-import java.io.ByteArrayInputStream
-import java.io.ByteArrayOutputStream
-import java.io.OutputStream
+import java.io.*
 import kotlin.random.Random
 
 /**
@@ -83,5 +82,22 @@ class ProgressedCopyTest {
             MD5(ByteArrayInputStream(input)).value(),
             MD5(ByteArrayInputStream(output.toByteArray())).value()
         )
+    }
+
+    /**
+     * Check exception when stream not available.
+     */
+    @Test
+    fun emptyStringIfMd5NotAvailable() {
+        try {
+            MD5(object : InputStream() {
+                override fun read(): Int {
+                    throw IOException("Not available")
+                }
+            }).value()
+            fail()
+        } catch (e: Exception) {
+            Assertions.assertEquals("java.io.IOException: Not available", e.message)
+        }
     }
 }
