@@ -81,4 +81,19 @@ class FileLogTest {
         log.close();
         assertTrue(true);
     }
+
+    /**
+     * Check it should create new log file if size limit reached
+     */
+    @Test
+    void contentLargerThenSizeLimit() throws IOException{
+        final File tempDir = Files.createTempDirectory("test").toFile();
+        final File logFile = new File(tempDir, "temp.log");
+        final FileLog log = new FileLog(new SystemPrintLog(),logFile.getAbsolutePath(), 1);
+        log.open();
+        log.info("This is a new Line");
+        log.info("This is a new Line"); // Create new file because the log file reach the limit.
+        log.close();
+        assertEquals(2, tempDir.list().length);
+    }
 }
