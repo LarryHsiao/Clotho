@@ -7,13 +7,15 @@ import java.net.InetAddress
 class PhantomTargetTest {
     @Test
     fun simple() {
+        val result = PhantomTarget()
+        result.name()
         assertEquals(
             InetAddress.getByName("127.0.0.1"),
-            PhantomTarget().interfaceInetAddress()
+            result.interfaceInetAddress()
         )
         assertEquals(
             InetAddress.getByName("127.0.0.1"),
-            PhantomTarget().broadcastAddress()
+            result.broadcastAddress()
         )
     }
 }

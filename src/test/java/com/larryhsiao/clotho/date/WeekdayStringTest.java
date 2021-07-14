@@ -30,6 +30,19 @@ public class WeekdayStringTest {
     }
 
     /**
+     * Default indicator(English).
+     */
+    @Test
+    public void theIndicatorDefault() throws Exception {
+        assertEquals(
+            "Tue",
+            new WeekdayString(
+                new SimpleDateFormat("dd/MM/yyyy", ENGLISH).parse("23/02/2021")
+            ).value()
+        );
+    }
+
+    /**
      * Normal case in Taiwan.
      */
     @Test
