@@ -29,7 +29,7 @@ class FileLogTest {
            new FileText(logFile).value()
         );
     }
-    
+
     /**
      * Check file content is same with all log method.
      */
@@ -69,5 +69,16 @@ class FileLogTest {
             new FileText(logFile).value()
         );
         assertEquals(1, tempDir.list().length);
+    }
+
+    /**
+     * Check not throw exception when file is not valid calling open/close.
+     */
+    @Test
+    void notCrashIfCanNotLog() {
+        final FileLog log = new FileLog(new File("/").getAbsolutePath());
+        log.open();
+        log.close();
+        assertTrue(true);
     }
 }

@@ -47,6 +47,8 @@ public class FileLog implements Log {
             if (bufferWriter != null) {
                 bufferWriter.flush();
                 bufferWriter.close();
+            }else {
+                throw new IOException("file not opened with bufferWriter");
             }
         } catch (IOException e) {
             fallbackLog.error(new ExceptionString(e).value());
