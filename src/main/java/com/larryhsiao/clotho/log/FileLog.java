@@ -76,7 +76,9 @@ public class FileLog implements Log {
     }
 
     private void writeToFile(String msg) {
-        if (bufferWriter != null) {
+        if (bufferWriter == null || !logFile.exists()) {
+            fallbackLog.error("You have to call FileLog.open(...) before starting to log");
+        } else {
             try {
                 if (checkFileSize()) {
                     bufferWriter = new BufferedWriter(new FileWriter(logFile, true));
@@ -87,10 +89,6 @@ public class FileLog implements Log {
             } catch (IOException e) {
                 fallbackLog.error(new ExceptionString(e).value());
             }
-        }
-
-        if (bufferWriter == null) {
-            fallbackLog.error("You have to call FileLog.open(...) before starting to log");
         }
     }
 

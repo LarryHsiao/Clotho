@@ -25,8 +25,8 @@ class FileLogTest {
         log.info("This is a new Line");
         log.close();
         assertEquals(
-           "This is a new Line",
-           new FileText(logFile).value()
+            "This is a new Line",
+            new FileText(logFile).value()
         );
     }
 
@@ -49,12 +49,12 @@ class FileLogTest {
             new FileText(logFile).value()
         );
     }
-    
+
     /**
      * Append to exist log file if path exist.
      */
     @Test
-    void appendToExistOne() throws IOException{
+    void appendToExistOne() throws IOException {
         final File tempDir = Files.createTempDirectory("test").toFile();
         final File logFile = new File(tempDir, "temp.log");
         final FileLog log = new FileLog(logFile.getAbsolutePath());
@@ -86,14 +86,40 @@ class FileLogTest {
      * Check it should create new log file if size limit reached
      */
     @Test
-    void contentLargerThenSizeLimit() throws IOException{
+    void contentLargerThenSizeLimit() throws IOException {
         final File tempDir = Files.createTempDirectory("test").toFile();
         final File logFile = new File(tempDir, "temp.log");
-        final FileLog log = new FileLog(new SystemPrintLog(),logFile.getAbsolutePath(), 1);
+        final FileLog log = new FileLog(new SystemPrintLog(), logFile.getAbsolutePath(), 1);
         log.open();
         log.info("This is a new Line");
         log.info("This is a new Line"); // Create new file because the log file reach the limit.
         log.close();
         assertEquals(2, tempDir.list().length);
+    }
+
+    /**
+     * No exception if file deleted.
+     */
+    @Test
+    void fileDeleted() throws IOException {
+        final File tempDir = Files.createTempDirectory("test").toFile();
+        final File logFile = new File(tempDir, "temp.log");
+        final FileLog log = new FileLog(logFile.getAbsolutePath());
+        log.open();
+        logFile.delete();
+        log.info("This is a new Line");
+        log.close();
+        assertTrue(true);
+    }
+
+    /**
+     * No exception when file path not valid
+     */
+    @Test
+    void notValidPath() {
+        final FileLog log = new FileLog(new File("/abc").getAbsolutePath());
+        log.open();
+        log.close();
+        assertTrue(true);
     }
 }
