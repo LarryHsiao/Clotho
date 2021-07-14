@@ -6,6 +6,9 @@ import com.larryhsiao.clotho.io.ProgressedCopy;
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
 
+/**
+ * Source to build string from {@link InputStream}.
+ */
 public class StreamString implements Source<String> {
     private final InputStream inputStream;
 

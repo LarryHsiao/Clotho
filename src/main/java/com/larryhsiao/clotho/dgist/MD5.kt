@@ -23,8 +23,7 @@ class MD5(private val input: InputStream) : Source<String> {
             input.close()
             return HexString(md.digest()).value()
         } catch (e: IOException) {
-            e.printStackTrace()
+            throw RuntimeException(e)
         }
-        return ""
     }
 }
