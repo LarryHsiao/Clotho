@@ -29,7 +29,27 @@ class FileLogTest {
            new FileText(logFile).value()
         );
     }
-
+    
+    /**
+     * Check file content is same with all log method.
+     */
+    @Test
+    void fileContentAll() throws IOException {
+        final File tempDir = Files.createTempDirectory("test").toFile();
+        final File logFile = new File(tempDir, "temp.log");
+        final FileLog log = new FileLog(logFile.getAbsolutePath());
+        log.open();
+        log.info("This is a new Line");
+        log.warning("This is a new Line");
+        log.error("This is a new Line");
+        log.debug("This is a new Line");
+        log.close();
+        assertEquals(
+            "This is a new Line\nThis is a new Line\nThis is a new Line\nThis is a new Line",
+            new FileText(logFile).value()
+        );
+    }
+    
     /**
      * Append to exist log file if path exist.
      */
