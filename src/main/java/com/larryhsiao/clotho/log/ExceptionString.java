@@ -9,9 +9,9 @@ import java.io.StringWriter;
  * String trace string from exception.
  */
 public class ExceptionString implements Source<String> {
-    private final Exception exception;
+    private final Throwable exception;
 
-    public ExceptionString(Exception exception) {this.exception = exception;}
+    public ExceptionString(Throwable exception) {this.exception = exception;}
 
     @Override
     public String value() {
