@@ -18,7 +18,7 @@ class ToFileTest {
         val src = File.createTempFile("temp", "")
         val dst = File.createTempFile("dest", "")
         TextFile(src, sourceText).value()
-        ToFile(src, dst) {}.fire()
+        ToFile(src, dst) { null }.fire()
         assertEquals(
             sourceText,
             FileText(dst).value()
@@ -36,7 +36,7 @@ class ToFileTest {
         val src = File.createTempFile("temp", "")
         val dst = File.createTempFile("dest", "")
         TextFile(src, sourceText).value()
-        ToFile(src, dst) {}.fire()
+        ToFile(src, dst) { null }.fire()
         assertEquals(
             sourceText,
             FileText(dst).value()
