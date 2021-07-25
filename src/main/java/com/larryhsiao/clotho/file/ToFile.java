@@ -53,7 +53,7 @@ public class ToFile implements Action {
                 progress
             ).fire();
         } catch (Exception e) {
-            e.printStackTrace();
+            throw new RuntimeException(e);
         }
     }
 }
