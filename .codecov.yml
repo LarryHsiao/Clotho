@@ -1,6 +1,10 @@
 coverage:
-  round: down
-  range: "60..75"
+  status:
+    patch:
+      default:
+        target: auto
+        threshold: 5%
+        base: auto
   notify:
     slack:
       clotho_build:
