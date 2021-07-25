@@ -18,13 +18,19 @@ public class StreamString implements Source<String> {
 
     @Override
     public String value() {
-        final ByteArrayOutputStream byteArrayOutput = new ByteArrayOutputStream();
-        new ProgressedCopy(
-            inputStream,
-            byteArrayOutput,
-            1024,
-            integer -> null
-        ).fire();
-        return byteArrayOutput.toString();
+        try {
+            final ByteArrayOutputStream byteArrayOutput = new ByteArrayOutputStream();
+            new ProgressedCopy(
+                inputStream,
+                byteArrayOutput,
+                1024,
+                integer -> null
+            ).fire();
+            inputStream.close();
+            byteArrayOutput.close();
+            return byteArrayOutput.toString();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 }

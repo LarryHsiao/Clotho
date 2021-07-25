@@ -31,8 +31,6 @@ public class ProgressedCopy implements Action {
     public void fire() {
         try {
             read();
-            input.close();
-            output.close();
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
