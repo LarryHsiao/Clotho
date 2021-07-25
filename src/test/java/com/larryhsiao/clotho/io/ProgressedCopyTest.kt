@@ -3,8 +3,7 @@ package com.larryhsiao.clotho.io
 import com.larryhsiao.clotho.dgist.MD5
 import com.larryhsiao.clotho.file.FileText
 import org.junit.jupiter.api.Assertions
-import org.junit.jupiter.api.Assertions.assertEquals
-import org.junit.jupiter.api.Assertions.fail
+import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.Test
 import java.io.*
 import java.util.concurrent.Callable
@@ -146,5 +145,26 @@ class ProgressedCopyTest {
             "ABC",
             FileText(target).value()
         )
+    }
+
+    /**
+     * Should throw exception when outputStream can not write.
+     */
+    @Test
+    fun exceptionCantNotWrite() {
+        try {
+            ProgressedCopy(
+                ByteArrayInputStream("Test".toByteArray()),
+                object : OutputStream() {
+                    override fun write(p0: Int) {
+                        throw RuntimeException("Write failed")
+                    }
+                },
+                1024 * 1024 * 4
+            ) { null }.fire()
+            fail<Unit>()
+        } catch (ignore: Exception) {
+            assertTrue(true)
+        }
     }
 }
