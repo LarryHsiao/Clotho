@@ -1,10 +1,15 @@
 package com.larryhsiao.clotho.io
 
 import com.larryhsiao.clotho.dgist.MD5
+import com.larryhsiao.clotho.file.FileText
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.Test
 import java.io.*
+import java.util.concurrent.Callable
+import java.util.concurrent.Executors
+import java.util.concurrent.TimeUnit
+import java.util.concurrent.TimeoutException
 import kotlin.random.Random
 
 /**
@@ -97,7 +102,69 @@ class ProgressedCopyTest {
             }).value()
             fail()
         } catch (e: Exception) {
-            Assertions.assertEquals("java.io.IOException: Not available", e.message)
+            assertEquals("java.io.IOException: Not available", e.message)
+        }
+    }
+
+    /**
+     * No blocking when input stream have no available bytes.
+     */
+    @Test
+    fun notBlockingWhenNoAvailable() {
+        val executor = Executors.newCachedThreadPool()
+        val future = executor.submit(Callable {
+            ProgressedCopy(
+                ByteArrayInputStream(ByteArray(0)),
+                ByteArrayOutputStream(),
+                1024 * 1024 * 4
+            ) { null }.fire()
+        })
+        try {
+            future[5, TimeUnit.SECONDS]
+            Assertions.assertTrue(true)
+        } catch (ex: TimeoutException) {
+            fail<Unit>()
+        } finally {
+            future.cancel(true) // may or may not desire this
+        }
+    }
+
+    /**
+     * No blocking when input stream have no available bytes.
+     */
+    @Test
+    fun readAllData() {
+        val target = File.createTempFile("prefix", "suffix")
+        ProgressedCopy(
+            ByteArrayInputStream("ABC".toByteArray()),
+            FileOutputStream(target),
+            1
+        ) { null }.fire()
+
+        Assertions.assertEquals(
+            "ABC",
+            FileText(target).value()
+        )
+    }
+
+    /**
+     * Should throw exception when outputStream can not write.
+     */
+    @Test
+    fun exceptionCantNotWrite() {
+        try {
+            ProgressedCopy(
+                ByteArrayInputStream("Test".toByteArray()),
+                object : OutputStream() {
+                    override fun write(p0: Int) {
+                        throw RuntimeException("Write failed")
+                    }
+                },
+                1024 * 1024 * 4
+            ) { null }.fire()
+            fail<Unit>()
+        } catch (ignore: Exception) {
+            assertTrue(true)
         }
     }
 }
