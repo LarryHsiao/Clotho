@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Assertions.fail
 import org.junit.jupiter.api.Test
 import java.io.ByteArrayInputStream
 import java.io.File
+import java.io.FileInputStream
 
 /**
  * Tests for [com.larryhsiao.clotho.file.ToFile].
@@ -20,8 +21,10 @@ class ToFileTest {
         val sourceText = "This is source file"
         val src = File.createTempFile("temp", "")
         val dst = File.createTempFile("dest", "")
+        val inputStream = FileInputStream(src)
         TextFile(src, sourceText).value()
-        ToFile(src, dst) { null }.fire()
+        ToFile(inputStream, dst) { null }.fire()
+        inputStream.close()
         assertEquals(
             sourceText,
             FileText(dst).value()
@@ -38,8 +41,10 @@ class ToFileTest {
         }.contentToString()
         val src = File.createTempFile("temp", "")
         val dst = File.createTempFile("dest", "")
+        val inputStream = FileInputStream(src)
         TextFile(src, sourceText).value()
-        ToFile(src, dst) { null }.fire()
+        ToFile(inputStream, dst) { null }.fire()
+        inputStream.close()
         assertEquals(
             sourceText,
             FileText(dst).value()

@@ -35,23 +35,18 @@ public class ToFile implements Action {
         this(input, dst, progress, 1024 * 1024 * 4);
     }
 
-    public ToFile(
-        File source,
-        File dst,
-        Function<Integer, Void> progress
-    ) throws FileNotFoundException {
-        this(new FileInputStream(source), dst, progress);
-    }
 
     @Override
     public void fire() {
         try {
+            final OutputStream output = new FileOutputStream(dst);
             new ProgressedCopy(
                 input,
-                new FileOutputStream(dst),
+                output,
                 bufferSize,
                 progress
             ).fire();
+            output.close();
         } catch (Exception e) {
             throw new RuntimeException(e);
         }

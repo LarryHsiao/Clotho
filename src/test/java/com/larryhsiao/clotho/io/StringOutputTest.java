@@ -15,9 +15,10 @@ public class StringOutputTest {
      * Check if the actual output is same as input.
      */
     @Test
-    public void checkOutput() {
+    public void checkOutput() throws Exception{
         ByteArrayOutputStream output = new ByteArrayOutputStream();
         new StringOutput("Content", output).fire();
+        output.close();
         Assertions.assertEquals("Content", new String(output.toByteArray()));
     }
 }

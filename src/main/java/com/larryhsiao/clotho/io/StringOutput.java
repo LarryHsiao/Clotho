@@ -5,6 +5,8 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 
 import java.io.ByteArrayInputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.io.OutputStream;
 
 /**
@@ -21,11 +23,15 @@ public class StringOutput implements Action {
 
     @Override
     public void fire() {
-        new ProgressedCopy(
-            new ByteArrayInputStream(content.getBytes()),
-            stream,
-            1024 * 1024 * 4,
-            integer -> null
-        ).fire();
+        try (InputStream inputStream = new ByteArrayInputStream(content.getBytes())) {
+            new ProgressedCopy(
+                inputStream,
+                stream,
+                1024 * 1024 * 4,
+                integer -> null
+            ).fire();
+        }catch (IOException e){
+            throw new RuntimeException(e);
+        }
     }
 }
