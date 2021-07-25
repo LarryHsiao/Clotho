@@ -30,19 +30,30 @@ public class ProgressedCopy implements Action {
     @Override
     public void fire() {
         try {
-            final byte[] buffer = new byte[bufferSize];
-            int read = input.read(buffer);
-            int totalLength = 0;
-            while (read != -1){
-                output.write(buffer, 0, read);
-                totalLength += read;
-                progress.apply(totalLength);
-                read = input.read(buffer);
-            }
+            read();
             input.close();
             output.close();
         } catch (Exception e) {
             throw new RuntimeException(e);
+        }
+    }
+
+    private void read() throws Exception {
+        final byte[] buffer = new byte[bufferSize];
+        if (input.available() == 0) {
+            return;
+        }
+        int read = input.read(buffer);
+        int totalLength = 0;
+        while (read != -1) {
+            output.write(buffer, 0, read);
+            totalLength += read;
+            progress.apply(totalLength);
+            if (input.available() != 0) {
+                read = input.read(buffer);
+            } else {
+                break;
+            }
         }
     }
 }
