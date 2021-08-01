@@ -38,9 +38,6 @@ public class ProgressedCopy implements Action {
 
     private void read() throws Exception {
         final byte[] buffer = new byte[bufferSize];
-        if (input.available() == 0) {
-            return;
-        }
         int read = input.read(buffer);
         int totalLength = 0;
         while (read != -1) {
