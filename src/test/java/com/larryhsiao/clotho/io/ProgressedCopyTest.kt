@@ -130,6 +130,30 @@ class ProgressedCopyTest {
     }
 
     /**
+     * Still read stream when no available.
+     */
+    @Test
+    fun blockingWhenNoAvailable() {
+        val executor = Executors.newCachedThreadPool()
+        val future = executor.submit(Callable {
+            ProgressedCopy(
+                ByteArrayInputStream(ByteArray(1)),
+                ByteArrayOutputStream(),
+                1024 * 1024 * 4,
+                true
+            ) { null }.fire()
+        })
+        try {
+            future[5, TimeUnit.SECONDS]
+            Assertions.assertTrue(true)
+        } catch (ex: TimeoutException) {
+            fail<Unit>()
+        } finally {
+            future.cancel(true) // may or may not desire this
+        }
+    }
+
+    /**
      * No blocking when input stream have no available bytes.
      */
     @Test
