@@ -13,6 +13,7 @@ public class ProgressedCopy implements Action {
     private final InputStream input;
     private final OutputStream output;
     private final int bufferSize;
+    private final boolean keepReading;
     private final Function<Integer, Void> progress;
 
     public ProgressedCopy(
@@ -21,10 +22,21 @@ public class ProgressedCopy implements Action {
         int bufferSize,
         Function<Integer, Void> progress
     ) {
+        this(input, output, bufferSize, false, progress);
+    }
+
+    public ProgressedCopy(
+        InputStream input,
+        OutputStream output,
+        int bufferSize,
+        boolean keepReading,
+        Function<Integer, Void> progress
+    ) {
         this.input = input;
         this.output = output;
         this.bufferSize = bufferSize;
         this.progress = progress;
+        this.keepReading = keepReading;
     }
 
     @Override
@@ -44,7 +56,7 @@ public class ProgressedCopy implements Action {
             output.write(buffer, 0, read);
             totalLength += read;
             progress.apply(totalLength);
-            if (input.available() != 0) {
+            if (keepReading || input.available() != 0) {
                 read = input.read(buffer);
             } else {
                 break;
