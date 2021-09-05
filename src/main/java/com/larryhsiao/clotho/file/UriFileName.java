@@ -1,9 +1,9 @@
 package com.larryhsiao.clotho.file;
 
 import com.larryhsiao.clotho.Source;
-import com.sun.org.apache.xerces.internal.util.URI;
 
 import java.io.File;
+import java.net.URI;
 
 /**
  * Source to build file name from given uri.

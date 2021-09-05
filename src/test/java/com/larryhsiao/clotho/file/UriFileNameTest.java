@@ -1,6 +1,5 @@
 package com.larryhsiao.clotho.file;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -53,11 +52,11 @@ class UriFileNameTest {
      */
     @Test
     void invalidUri() {
-        try {
-            new UriFileName("/path.com/long/long/path/abc").value();
-            fail();
-        } catch (Exception e) {
-            assertTrue(true);
-        }
+        assertEquals(
+            "abc",
+            new UriFileName(
+                "/path.com/long/long/path/abc"
+            ).value()
+        );
     }
 }
