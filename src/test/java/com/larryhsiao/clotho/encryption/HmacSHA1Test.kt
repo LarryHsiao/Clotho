@@ -6,7 +6,6 @@ import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Test
 
 class HmacSHA1Test {
-
     @Test
     fun simple() {
         Assertions.assertEquals(
