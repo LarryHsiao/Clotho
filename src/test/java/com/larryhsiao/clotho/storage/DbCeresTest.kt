@@ -4,6 +4,7 @@ import com.larryhsiao.clotho.database.SingleConn
 import com.larryhsiao.clotho.database.sqlite.MemorySQLiteConn
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Test
+import java.lang.Exception
 
 /**
  * Test for [DbCeres]
@@ -32,12 +33,27 @@ class DbCeresTest {
      * Test if delete work.
      */
     @Test
-    internal fun delete() {
+    fun delete() {
         DbCeres(SingleConn(MemorySQLiteConn())).also {
             it.store("Key1", "value")
             it.delete("Key1")
 
             Assertions.assertNull(it.all()["Key1"])
+        }
+    }
+
+    /**
+     * Throw exception if delete failure.
+     */
+    @Test
+    fun deleteNonExist() {
+        try {
+            DbCeres(SingleConn(MemorySQLiteConn())).also {
+                it.delete("Key1")
+            }
+            Assertions.fail()
+        } catch (e: Exception) {
+            Assertions.assertTrue(true)
         }
     }
 }
