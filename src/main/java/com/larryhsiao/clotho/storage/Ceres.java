@@ -1,23 +1,30 @@
-package com.larryhsiao.clotho.storage
+package com.larryhsiao.clotho.storage;
+
+import java.util.Map;
 
 /**
  * Represent a key-value storage in [String].
  */
-interface Ceres {
+public interface Ceres {
     /**
      * Store an value with key.
      */
-    fun store(key: String, value: String)
+    void store(String key, String value);
 
     /**
      * Obtain value with given string.
      *
      * @return non-null value returns, not matter the key is exist or not.
      */
-    fun get(key: String): String
+    String get(String key);
 
     /**
      * Retrieve all data in map.
      */
-    fun all(): Map<String, String>
+    Map<String, String> all();
+
+    /**
+     * Delete given key's entry.
+     */
+    void delete(String key);
 }

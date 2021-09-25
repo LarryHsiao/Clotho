@@ -27,4 +27,17 @@ class DbCeresTest {
             )
         }
     }
+
+    /**
+     * Test if delete work.
+     */
+    @Test
+    internal fun delete() {
+        DbCeres(SingleConn(MemorySQLiteConn())).also {
+            it.store("Key1", "value")
+            it.delete("Key1")
+
+            Assertions.assertNull(it.all()["Key1"])
+        }
+    }
 }

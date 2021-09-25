@@ -53,4 +53,19 @@ class DbCeres(dbConn: Source<Connection>) : Ceres {
             }
         }
     }
+
+    override fun delete(key: String?) {
+        dbConn.value().prepareStatement(
+            """
+            delete FROM ceres 
+            where key=?1;
+        """
+        ).use { statement ->
+            statement.setString(1, key)
+            statement.execute()
+            if (statement.updateCount == 0) {
+                throw SQLException("Delete failed")
+            }
+        }
+    }
 }
