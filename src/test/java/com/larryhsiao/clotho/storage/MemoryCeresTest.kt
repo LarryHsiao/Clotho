@@ -64,4 +64,18 @@ class MemoryCeresTest {
         assertEquals(1, ceres.all().size)
         assertEquals(newValue, ceres.all()[key])
     }
+
+    /**
+     * Check delete work
+     */
+    @Test
+    fun test() {
+        val key = "key3"
+        val value = "value03"
+        val ceres = MemoryCeres().apply {
+            this.store(key, value)
+            this.delete(key)
+        }
+        assertEquals(0, ceres.all().size)
+    }
 }

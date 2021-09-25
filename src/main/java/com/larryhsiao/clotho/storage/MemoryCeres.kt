@@ -16,4 +16,8 @@ class MemoryCeres : Ceres {
     override fun all(): Map<String, String> {
         return map
     }
+
+    override fun delete(key: String) {
+        map.remove(key)
+    }
 }
