@@ -19,10 +19,10 @@ class DateRangeSourceTest {
     fun simple() {
         DateRangeSource(
             TimeZone.getTimeZone("GMT"),
-            ConstSource(Pair(0L, 0L)) // 1970/01/02 00:00:00
+            ConstSource(longArrayOf(0L, 0L)) // 1970/01/02 00:00:00
         ).value().run {
-            assertEquals("1970-01-01T23:59:59Z", Date(first).toInstant().toString())
-            assertEquals("1970-01-01T00:00:00Z", Date(second).toInstant().toString())
+            assertEquals("1970-01-01T23:59:59Z", Date(this[0]).toInstant().toString())
+            assertEquals("1970-01-01T00:00:00Z", Date(this[1]).toInstant().toString())
         }
     }
 }
