@@ -30,16 +30,16 @@ public class DateRangeSource implements Source<long[]> {
         final long[] result = new long[2];
         final Calendar first = Calendar.getInstance(timeZone);
         first.setTime(new Date(range[0]));
-        first.set(Calendar.HOUR_OF_DAY, 23);
-        first.set(Calendar.MINUTE, 59);
-        first.set(Calendar.SECOND, 59);
+        first.set(Calendar.HOUR_OF_DAY, 0);
+        first.set(Calendar.MINUTE, 0);
+        first.set(Calendar.SECOND, 0);
         result[0] = first.getTimeInMillis();
 
         final Calendar second = Calendar.getInstance(timeZone);
         second.setTime(new Date(range[1]));
-        second.set(Calendar.HOUR_OF_DAY, 0);
-        second.set(Calendar.MINUTE, 0);
-        second.set(Calendar.SECOND, 0);
+        second.set(Calendar.HOUR_OF_DAY, 23);
+        second.set(Calendar.MINUTE, 59);
+        second.set(Calendar.SECOND, 59);
         result[1] = second.getTimeInMillis();
         return result;
     }
