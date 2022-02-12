@@ -7,5 +7,5 @@ public interface Source<T> {
     /**
      * Fetch the data
      */
-    T value();
+    T value() throws Exception;
 }

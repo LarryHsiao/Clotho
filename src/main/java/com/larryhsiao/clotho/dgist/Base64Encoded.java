@@ -15,7 +15,7 @@ public class Base64Encoded implements Source<String> {
     }
 
     @Override
-    public String value() {
+    public String value() throws Exception{
         return Base64.getEncoder().encodeToString(data.value());
     }
 }

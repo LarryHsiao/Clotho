@@ -20,17 +20,13 @@ public class HmacSHA1 implements Source<byte[]> {
     }
 
     @Override
-    public byte[] value() {
-        try {
-            final SecretKeySpec signingKey = new SecretKeySpec(
-                secret.getBytes(UTF_8),
-                "HmacSHA1"
-            );
-            final Mac mac = Mac.getInstance("HmacSHA1");
-            mac.init(signingKey);
-            return mac.doFinal(data.value());
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
+    public byte[] value() throws Exception {
+        final SecretKeySpec signingKey = new SecretKeySpec(
+            secret.getBytes(UTF_8),
+            "HmacSHA1"
+        );
+        final Mac mac = Mac.getInstance("HmacSHA1");
+        mac.init(signingKey);
+        return mac.doFinal(data.value());
     }
 }

@@ -13,7 +13,7 @@ public class HmacSHA1Test {
      * Normal case
      */
     @Test
-    void normal() {
+    void normal() throws Exception {
         Assertions.assertEquals(
             "565a8e07219d855978015554920f01856470e158",
             new HexString(
