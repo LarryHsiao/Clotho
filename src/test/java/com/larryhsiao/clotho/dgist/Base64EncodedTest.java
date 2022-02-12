@@ -13,7 +13,7 @@ public class Base64EncodedTest {
      * Check output
      */
     @Test
-    void normal() {
+    void normal() throws Exception {
         Assertions.assertEquals(
             "QUJD",
             new Base64Encoded(() -> "ABC".getBytes(StandardCharsets.UTF_8)).value()
