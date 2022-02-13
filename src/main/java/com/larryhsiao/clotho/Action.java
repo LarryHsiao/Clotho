@@ -5,7 +5,7 @@ package com.larryhsiao.clotho;
  */
 public interface Action {
     /**
-     * Fire the action.
+     * Execute the action.
      */
-    void fire();
+    void execute();
 }
